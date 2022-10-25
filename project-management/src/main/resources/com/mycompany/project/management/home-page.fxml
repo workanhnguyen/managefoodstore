@@ -16,7 +16,7 @@
             <Image url="@../../../../images/main-logo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="continueButton" layoutX="471.0" layoutY="571.0" mnemonicParsing="false" onAction="#switchToChooseRoleLoginPage" prefHeight="49.0" prefWidth="338.0" stylesheets="@../../../../css/globalStyle.css" text="TIẾP TỤC" textFill="WHITE">
+      <Button fx:id="continueButton" layoutX="471.0" layoutY="571.0" mnemonicParsing="false" onAction="#switchToChooseRoleLoginPage" prefHeight="49.0" prefWidth="338.0" stylesheets="@../../../../css/GlobalStyle.css" text="TIẾP TỤC" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

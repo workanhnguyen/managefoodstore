@@ -16,7 +16,7 @@
             <Font name="System Bold" size="80.0" />
          </font>
       </Label>
-      <ImageView fitHeight="344.0" fitWidth="444.0" layoutX="186.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="344.0" fitWidth="444.0" layoutX="186.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" style="-fx-bo-fx-background-radius: 10 10 10 10;">
          <image>
             <Image url="@../../../../images/manager.jpg" />
          </image>
@@ -26,7 +26,7 @@
             <Image url="@../../../../images/emloyee.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="185.0" layoutY="566.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/globalStyle.css" text="QUẢN TRỊ VIÊN" textFill="WHITE">
+      <Button layoutX="185.0" layoutY="566.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/GlobalStyle.css" text="QUẢN TRỊ VIÊN" textFill="WHITE">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
@@ -38,7 +38,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="703.0" layoutY="562.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/globalStyle.css" text="NHÂN VIÊN" textFill="WHITE">
+      <Button layoutX="703.0" layoutY="562.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/GlobalStyle.css" text="NHÂN VIÊN" textFill="WHITE">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
