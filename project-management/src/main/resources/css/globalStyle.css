@@ -1,0 +1,35 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 25, 2022, 10:06:50 AM
+    Author     : ASUS
+*/
+/*Reset CSS*/
+* {
+    -fx-margin: 0;
+    -fx-padding: 0;
+    -fx-box-sizing: border-box;
+}
+
+/*-------------------- BUTTON -------------------*/
+.btn {
+    -fx-background-radius: 16px;
+}
+
+.bg-yellow {
+    -fx-background-color: #feb901;
+}
+
+.btn.bg-yellow:hover {
+    -fx-background-color: #fe7b02;
+}
+
+.bg-green {
+    -fx-background-color: #9dca51;
+}
+
+.bg-green:hover {
+    -fx-background-color: #51CA6F;
+}
