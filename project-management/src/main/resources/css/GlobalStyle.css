@@ -15,7 +15,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 /*-------------------- BUTTON -------------------*/
 .btn {
+    -fx-text-fill: #ffffff;
     -fx-background-radius: 16px;
+}
+
+.btn:hover {
+    -fx-cursor: hand;
 }
 
 .bg-yellow {
@@ -32,4 +37,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .bg-green:hover {
     -fx-background-color: #51CA6F;
+}
+
+/*---------- Input box CSS ------------*/
+.input {
+    -fx-background-color: transparent;
 }

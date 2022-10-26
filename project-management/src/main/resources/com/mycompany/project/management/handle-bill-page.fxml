@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane accessibleRole="TEXT_FIELD" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="80.0" fitWidth="140.0" layoutX="36.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,19 +29,150 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="41.0" layoutY="132.0" prefHeight="472.0" prefWidth="575.0" style="-fx-border-width: 1; -fx-border-color: #000000; -fx-background-color: transparent;">
+      <Pane layoutX="41.0" layoutY="132.0" prefHeight="472.0" prefWidth="634.0" style="-fx-border-width: 1; -fx-border-color: #000000; -fx-background-color: transparent;">
          <children>
             <Label layoutX="11.0" layoutY="10.0" text="HÓA ĐƠN THANH TOÁN">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="46.0" fitWidth="98.0" layoutX="493.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../images/main-logo-only.jpg" />
-               </image>
-            </ImageView>
+            <Label layoutX="12.0" layoutY="57.0" text="Mã hóa đơn:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="323.0" layoutY="58.0" text="Số bàn:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="89.0" text="Nhân viên:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="324.0" layoutY="89.0" text="Thời gian:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="120.0" text="Các món đã đặt">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextArea disable="true" editable="false" layoutX="44.0" layoutY="153.0" prefHeight="200.0" prefWidth="489.0" text="Món ăn 1          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 2          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 3          50.000 VNĐ            x 3           150.000 VNĐ&#10;Món ăn 4          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 5          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 6          50.000 VNĐ            x 3           150.000 VNĐ&#10;Món ăn 7          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 8          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 9          50.000 VNĐ            x 3           150.000 VNĐ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="15.0" layoutY="368.0" text="Giảm giá: ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="416.0" text="Thành tiền:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="119.0" layoutY="58.0" text="HD01">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="119.0" layoutY="89.0" text="Phạm Nguyễn Như Bình">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="58.0" text="BAN05">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="415.0" layoutY="89.0" text="10:21AM - 22/10/2022">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="147.0" layoutY="368.0" text="20.000 VNĐ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="146.0" layoutY="416.0" style="-fx-text-fill: #bc1313;" text="1.240.000 VNĐ" textFill="#bc1313">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="692.0" layoutY="11.0" text="KHÁCH HÀNG THÀNH VIÊN">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <Text layoutX="692.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField layoutX="734.0" layoutY="187.0" prefHeight="36.0" prefWidth="238.0" promptText="Nhập mã khách hàng" style="-fx-background-color: #ffffff;" />
+      <Button layoutX="974.0" layoutY="186.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #feb901; -fx-font-size: 14; -fx-font-weight: bold;" text="Tìm kiếm">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="734.0" layoutY="243.0" text="Kết quả tìm kiếm:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="763.0" layoutY="275.0" text="Tên khách hàng:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Line endX="14.0" endY="-68.86666870117188" layoutX="734.0" layoutY="350.0" startX="14.0" startY="9.533355712890625" />
+      <Label layoutX="764.0" layoutY="307.0" text="Tổng điểm:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="765.0" layoutY="339.0" text="Điểm cộng thêm:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="938.0" layoutY="274.0" text="Trịnh Tấn Sĩ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="939.0" layoutY="306.0" text="20000">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="939.0" layoutY="339.0" text="12400">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="748.0" layoutY="382.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="Sử dụng điểm">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-green" />
+         </styleClass>
+      </Button>
+      <Button layoutX="279.0" layoutY="617.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="THANH TOÁN">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-green" />
+         </styleClass>
+      </Button>
+      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-yellow" />
+         </styleClass>
+      </Button>
    </children>
 </Pane>
