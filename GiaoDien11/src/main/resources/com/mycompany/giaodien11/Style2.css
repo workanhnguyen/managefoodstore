@@ -15,3 +15,7 @@ Button
     -fx-background-color: orange;
     -fx-text-fill: white;
 }
+.bg-lightblue
+{
+    -fx-background-color: dodgerblue;
+}
