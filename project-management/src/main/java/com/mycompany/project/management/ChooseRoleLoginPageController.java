@@ -11,7 +11,7 @@ import javafx.fxml.FXML;
  *
  * @author ASUS
  */
-public class ChooseRoleLoginPageController {
+public class  ChooseRoleLoginPageController {
     /**
      * Quy ước:
      * - Giá trị 0: là nhân viên
@@ -30,5 +30,15 @@ public class ChooseRoleLoginPageController {
         loginRole = 0;
         App.setRoot("employee-main-page");
     }
+    @FXML
+    public Combobox<String> comboBox;
+    
+
+    private static class Combobox<T> {
+
+        public Combobox() {
+        }
+    }
+    
 }
 
