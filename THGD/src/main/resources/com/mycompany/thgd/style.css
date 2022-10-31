@@ -1,0 +1,48 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFilClick nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+eSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 29, 2022, 6:19:30 PM
+    Author     : HP
+*/
+
+Pane
+{
+    -fx-background-color: white;
+}
+.bg-orange
+{
+    -fx-background-color: orange;
+}
+.bg-orange:hover
+{
+    -fx-background-color: yellow;
+    
+}
+.btn
+{
+    -fx-text-fill: white;
+     -fx-background-radius: 16px;
+}
+
+.bg-red
+{
+    -fx-background-color: red;
+}
+.bg-red:hover{
+    -fx-background-color:yellow;
+}
+.bg-blue{
+    
+    -fx-background-color: deepskyblue;
+}
+.bg-blue:hover{
+     -fx-background-color:blue;
+}
+
+
+
+
+
