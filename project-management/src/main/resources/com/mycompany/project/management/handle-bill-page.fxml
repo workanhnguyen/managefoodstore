@@ -61,12 +61,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextArea disable="true" editable="false" layoutX="44.0" layoutY="153.0" prefHeight="200.0" prefWidth="489.0" text="Món ăn 1          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 2          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 3          50.000 VNĐ            x 3           150.000 VNĐ&#10;Món ăn 4          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 5          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 6          50.000 VNĐ            x 3           150.000 VNĐ&#10;Món ăn 7          100.000 VNĐ          x 2          200.000 VNĐ&#10;Món ăn 8          70.000 VNĐ            x 1           70.000 VNĐ&#10;Món ăn 9          50.000 VNĐ            x 3           150.000 VNĐ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextArea>
-            <Label layoutX="15.0" layoutY="368.0" text="Giảm giá: ">
+            <Label layoutX="16.0" layoutY="389.0" text="Giảm giá: ">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -96,12 +91,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="147.0" layoutY="368.0" text="20.000 VNĐ">
+            <Label layoutX="147.0" layoutY="389.0" text="20.000 VNĐ">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="146.0" layoutY="416.0" style="-fx-text-fill: #bc1313;" text="1.240.000 VNĐ" textFill="#bc1313">
+            <Label layoutX="146.0" layoutY="416.0" style="-fx-text-fill: #bc1313;" text="570.000 VNĐ" textFill="#bc1313">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -109,6 +104,20 @@
             <Label layoutX="692.0" layoutY="11.0" text="KHÁCH HÀNG THÀNH VIÊN">
                <font>
                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextArea layoutX="32.0" layoutY="154.0" prefHeight="200.0" prefWidth="150.0" text="Món 1&#10;Món 2&#10;Món 3&#10;Món 4&#10;" />
+            <TextArea layoutX="159.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" text="100.000 VNĐ&#10;70.000 VNĐ&#10;50.000 VNĐ&#10;200.000 VNĐ" />
+            <TextArea layoutX="312.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" text="x 1&#10;x 2&#10;x 3&#10;x 1&#10;" />
+            <TextArea layoutX="420.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" text="100.000 VNĐ&#10;140.000 VNĐ&#10;150.000 VNĐ&#10;200.000 VNĐ&#10;" />
+            <Label layoutX="16.0" layoutY="363.0" text="Tổng tiền:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="147.0" layoutY="363.0" text="590.000 VNĐ">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Label>
          </children>
