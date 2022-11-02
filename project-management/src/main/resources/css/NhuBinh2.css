@@ -1,0 +1,21 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 29, 2022, 4:57:20 PM
+    Author     : nhubinh
+*/
+Pane
+{
+    -fx-background-color: white;
+}
+Button
+{
+    -fx-background-color: orange;
+    -fx-text-fill: white;
+}
+.bg-lightblue
+{
+    -fx-background-color: dodgerblue;
+}
