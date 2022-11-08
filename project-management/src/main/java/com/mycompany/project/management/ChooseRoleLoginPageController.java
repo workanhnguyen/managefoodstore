@@ -20,15 +20,8 @@ public class  ChooseRoleLoginPageController {
     public static int loginRole = 0;
     
     @FXML
-    private void switchToManagerMainPage() throws IOException {
-        loginRole = 1;
-        App.setRoot("manager-main-page");
-    }
-    
-    @FXML
-    private void switchToEmployeeMainPage() throws IOException {
-        loginRole = 0;
-        App.setRoot("employee-main-page");
+    private void switchToMainLoginPage() throws IOException {
+        App.setRoot("main-login-page");
     }
     @FXML
     public Combobox<String> comboBox;
