@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.MainLoginPageController">
    <children>
       <ImageView fitHeight="146.0" fitWidth="199.0" layoutX="532.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -38,7 +38,7 @@
          </font>
       </PasswordField>
       <Label layoutX="463.0" layoutY="436.0" prefHeight="17.0" prefWidth="337.0" text="* Dòng thông báo nếu xuất hiện lỗi" textFill="#d41313" />
-      <Button layoutX="465.0" layoutY="490.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="334.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG NHẬP">
+      <Button layoutX="465.0" layoutY="490.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="46.0" prefWidth="334.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG NHẬP">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

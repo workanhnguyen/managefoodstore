@@ -7,6 +7,6 @@ public class HomePageController {
 
     @FXML
     private void switchToChooseRoleLoginPage() throws IOException {
-        App.setRoot("choose-role-login-page");
+        App.setRoot("main-login-page");
     }
 }
