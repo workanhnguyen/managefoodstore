@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.ChooseRoleLoginPageController">
    <children>
-      <Label alignment="CENTER" layoutX="50.0" layoutY="37.0" prefHeight="146.0" prefWidth="1198.0" text="ĐĂNG NHẬP VỚI VAI TRÒ?">
+      <Label fx:id="switchToMainLoginPage" alignment="CENTER" layoutX="50.0" layoutY="37.0" prefHeight="146.0" prefWidth="1198.0" text="ĐĂNG NHẬP VỚI VAI TRÒ?">
          <font>
             <Font name="System Bold" size="80.0" />
          </font>
@@ -26,7 +26,7 @@
             <Image url="@../../../../images/emloyee.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="185.0" layoutY="566.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/GlobalStyle.css" text="QUẢN TRỊ VIÊN" textFill="WHITE">
+      <Button layoutX="185.0" layoutY="566.0" mnemonicParsing="false" onAction="#switchToMainLoginPage" prefHeight="55.0" prefWidth="382.0" stylesheets="@../../../../css/GlobalStyle.css" text="QUẢN TRỊ VIÊN" textFill="WHITE">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
