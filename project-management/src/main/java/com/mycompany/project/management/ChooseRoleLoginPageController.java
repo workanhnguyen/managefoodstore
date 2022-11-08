@@ -11,7 +11,7 @@ import javafx.fxml.FXML;
  *
  * @author ASUS
  */
-public class  ChooseRoleLoginPageController {
+public class ChooseRoleLoginPageController {
     /**
      * Quy ước:
      * - Giá trị 0: là nhân viên
