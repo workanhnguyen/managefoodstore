@@ -177,10 +177,16 @@
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#SwitchToEmployeeOrderPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
+         </styleClass>
+      </Button>
+      <Button layoutX="707.0" layoutY="616.0" mnemonicParsing="false" onAction="#switchToRegisterMemberPage" prefHeight="61.0" prefWidth="345.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ THÀNH VIÊN MỚI">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-blue" />
          </styleClass>
       </Button>
    </children>

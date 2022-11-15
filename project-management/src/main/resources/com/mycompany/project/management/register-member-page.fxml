@@ -34,7 +34,7 @@
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#SwitchToHandleBillPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
