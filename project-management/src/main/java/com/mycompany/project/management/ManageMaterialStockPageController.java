@@ -17,4 +17,8 @@ public class ManageMaterialStockPageController {
     private void switchToManagerFunctionsPage() throws IOException {
         App.setRoot("manager-functions-page");
     }
+    @FXML
+    private void switchToOrderMaterialPage() throws IOException {
+        App.setRoot("order-material-page");
+    }
 }

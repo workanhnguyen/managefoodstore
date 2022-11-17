@@ -7,8 +7,6 @@ package commonuse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -16,15 +14,15 @@ import java.util.logging.Logger;
  */
 public class JdbcUtils {
     private static Connection conn;
-    static {
+    public static Connection getConn() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/foodstoredb", "root", "09102002anha");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-    }
-
-    public static Connection getConn() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost/foodstoredb", "root", "09102002anha");
+        return null;
     }
 }

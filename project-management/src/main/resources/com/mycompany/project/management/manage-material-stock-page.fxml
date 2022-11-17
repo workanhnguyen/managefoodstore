@@ -55,6 +55,15 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button layoutX="1032.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToOrderMaterialPage" prefHeight="47.0" prefWidth="222.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT HÀNG">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <styleClass>
+            <String fx:value="bg-green" />
+            <String fx:value="btn" />
+         </styleClass>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="btn" />

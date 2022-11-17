@@ -63,6 +63,9 @@
             <String fx:value="bg-yellow" />
             <String fx:value="function" />
          </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btndangxuat" layoutX="441.0" layoutY="572.0" mnemonicParsing="false" onAction="#switchToMainLoginPage" prefHeight="61.0" prefWidth="409.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG XUẤT" textFill="#121111">
          <font>

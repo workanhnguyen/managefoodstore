@@ -4,30 +4,35 @@
  */
 package com.mycompany.project.management;
 
+import com.nva.pojo.NhanVien;
 import java.io.IOException;
-import commonuse.ComboBoxTime;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import com.nva.pojo.TimeField;
+import com.nva.services.NhanVienServices;
+import com.nva.services.TimeFieldServices;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 
 /**
  *
  * @author ADMIN
  */
-public class StatisticCustomTimeController {
-    @FXML
-    private ComboBox cbTime;
-
-    @FXML
-    private void switchToManagerFunctionsPage() throws IOException {
+public class StatisticCustomTimeController implements Initializable {
+    @FXML private ComboBox<TimeField> cbTimeField;
+    @FXML public void switchToManagerFunctionsPage() throws IOException {
         App.setRoot("manager-functions-page");
     }
-//    @FXML
-//    private ComboBox<String> cbxTime;
-//    ObservableList<String> list=FXCollections.observableArrayList("Theo tháng","Theo quý","Theo năm");
-//    @Override
-//    public void initialize (URL url,ResourceBundle rb){
-//       cbxTime.setItems(list);    
-//    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        TimeFieldServices tf = new TimeFieldServices();
+        this.cbTimeField.setItems(FXCollections.observableList(tf.getDanhSachTimeField()));
+    }
     @FXML
     private void switchToStatisticMonth() throws IOException {
         App.setRoot("statistic-month");
@@ -39,17 +44,6 @@ public class StatisticCustomTimeController {
      @FXML
     private void switchToStatisticYear() throws IOException {
         App.setRoot("statistic-year");
-    }
-    @FXML
-    private void switchModeTime() {
-        String item1 = "Thống kê theo thời gian tùy chỉnh";
-        String item2 = "Thống kê theo quý";
-        String item3 = "Thống kê theo tháng";
-        String item4 = "Thống kê theo năm";
-        ComboBoxTime[] comboBoxTime = new ComboBoxTime[]{new ComboBoxTime(1, item1), new ComboBoxTime(2, item2),
-                                        new ComboBoxTime(3, item3), new ComboBoxTime(4, item4)};
-        cbTime.getItems().addAll(comboBoxTime);
-        cbTime.getSelectionModel().select(1);
     }
 }
 //cái cmt là cái phần combobox để nhảy tới sự kiện chuyển trang nhưng mà không biết code đúng không, do tui không liên kết với fxml nên cũng không debug được

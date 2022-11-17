@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.SuccessDialogController">
+   <children>
+      <ImageView fitHeight="146.0" fitWidth="199.0" layoutX="532.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/main-logo-only.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="465.0" layoutY="490.0" mnemonicParsing="false" onAction="#switchToManageListOfEmployeePage" prefHeight="46.0" prefWidth="334.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ VỀ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-green" />
+         </styleClass>
+      </Button>
+      <Text layoutX="447.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đăng ký thành công!" wrappingWidth="375.196533203125">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

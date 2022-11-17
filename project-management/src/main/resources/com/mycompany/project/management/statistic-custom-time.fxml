@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.FXMLComboBoxController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.StatisticCustomTimeController">
    <children>
       <ImageView fitHeight="80.0" fitWidth="140.0" layoutX="32.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="32.0">
          <image>
@@ -37,7 +38,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTimeField" editable="true" layoutX="380.0" layoutY="147.0" onMouseClicked="#switchModeTime" prefHeight="50.0" prefWidth="562.0" promptText="Thời gian tùy chỉnh" style="-fx-background-color: white;" styleClass="style" />
       <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #efb620;" text="THỐNG KÊ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -100,5 +100,9 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <ComboBox fx:id="cbTimeField" layoutX="381.0" layoutY="147.0" prefHeight="50.0" prefWidth="562.0" style="-fx-background-color: white; -fx-border-color: #333333;" styleClass="style">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
    </children>
 </AnchorPane>

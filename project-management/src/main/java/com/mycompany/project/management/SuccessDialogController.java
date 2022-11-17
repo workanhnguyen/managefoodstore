@@ -4,21 +4,16 @@
  */
 package com.mycompany.project.management;
 
-import com.mycompany.project.management.App;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
 /**
  *
- * @author ADMIN
+ * @author ASUS
  */
-public class RegisterNewEmployeePageController {
+public class SuccessDialogController {
     @FXML
     private void switchToManageListOfEmployeePage() throws IOException {
         App.setRoot("manage-list-of-employee-page");
-    }
-    @FXML
-    private void switchToSuccessDialog() throws IOException {
-        App.setRoot("success-dialog");
     }
 }
