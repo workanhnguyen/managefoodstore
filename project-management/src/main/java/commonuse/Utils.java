@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Utils {
     public static List<MonAn> getDanhSachMonAn() throws SQLException {
-        Connection conn = JdbcUtils.getConnection();
+        Connection conn = JdbcUtils.getConn();
         Statement stm = conn.createStatement();
         ResultSet rs = stm.executeQuery("SELECT * FROM MonAn");
 

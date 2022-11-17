@@ -28,15 +28,15 @@ public class App extends Application {
         stage.setOnHiding(et -> {
             Connection conn = null;
             try {
-                conn = JdbcUtils.getConnection();
+                conn = JdbcUtils.getConn();
             } catch (SQLException ex) {
-                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-
+                    ex.printStackTrace();
                 }
             }
         });

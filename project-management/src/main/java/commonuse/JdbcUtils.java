@@ -24,7 +24,7 @@ public class JdbcUtils {
         }
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConn() throws SQLException {
         return DriverManager.getConnection("jdbc:mysql://localhost/foodstoredb", "root", "09102002anha");
     }
 }
