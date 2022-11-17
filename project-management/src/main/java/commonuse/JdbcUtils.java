@@ -20,16 +20,11 @@ public class JdbcUtils {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/foodstoredb", "root", "09102002anha");
-        } catch (SQLException ex) {
-            Logger.getLogger(JdbcUtils.class.getName()).log(Level.SEVERE, null, ex);
+            e.printStackTrace();
         }
     }
 
-    public static Connection getConnection() {
-        return conn;
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:mysql://localhost/foodstoredb", "root", "09102002anha");
     }
 }

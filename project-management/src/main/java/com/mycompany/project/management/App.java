@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * JavaFX App
@@ -21,10 +23,15 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setResizable(false);
-        scene = new Scene(loadFXML("home-page"), 1280, 710);
+        scene = new Scene(loadFXML("employee-functions-page"), 1280, 710);
 
         stage.setOnHiding(et -> {
-            Connection conn = JdbcUtils.getConnection();
+            Connection conn = null;
+            try {
+                conn = JdbcUtils.getConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (conn != null) {
                 try {
                     conn.close();

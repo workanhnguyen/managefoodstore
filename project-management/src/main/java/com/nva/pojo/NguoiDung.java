@@ -19,6 +19,19 @@ public class NguoiDung {
     private String diaChi;
     private boolean vaiTro;
 
+    public NguoiDung() {
+
+    }
+    public NguoiDung(String id, String matKhau, String ho, String ten, Date ngaySinh, String diaChi, boolean vaiTro) {
+        this.id = id;
+        this.matKhau = matKhau;
+        this.ho = ho;
+        this.ten = ten;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = diaChi;
+        this.vaiTro = vaiTro;
+    }
+
     public String getId() {
         return id;
     }

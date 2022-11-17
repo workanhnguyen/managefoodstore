@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.rmpage.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.FXMLComboBoxController">
    <children>
       <ImageView fitHeight="80.0" fitWidth="140.0" layoutX="32.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="32.0">
          <image>
@@ -37,7 +37,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ComboBox editable="true" layoutX="380.0" layoutY="147.0" prefHeight="50.0" prefWidth="562.0" promptText="Thời gian tùy chỉnh" style="-fx-background-color: white;" styleClass="style" />
+      <ComboBox fx:id="cbTimeField" editable="true" layoutX="380.0" layoutY="147.0" onMouseClicked="#switchModeTime" prefHeight="50.0" prefWidth="562.0" promptText="Thời gian tùy chỉnh" style="-fx-background-color: white;" styleClass="style" />
       <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #efb620;" text="THỐNG KÊ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -49,7 +49,7 @@
          </font>
       </Label>
       <Label layoutX="598.0" layoutY="326.0" prefHeight="30.0" prefWidth="194.0" text="*Thông báo thời gian không hợp lệ " textFill="#ff1616" />
-      <Button layoutX="36.0" layoutY="633.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="150.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+      <Button layoutX="36.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="54.0" prefWidth="150.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
