@@ -47,6 +47,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #c21517;
 }
 
+.bg-red:hover {
+    -fx-background-color: #b40a0a;
+}
+
 .bg-blue {
     -fx-background-color: #37B6FF;
 }

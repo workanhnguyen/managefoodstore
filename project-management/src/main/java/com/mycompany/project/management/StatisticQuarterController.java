@@ -4,29 +4,25 @@
  */
 package com.mycompany.project.management;
 
-import com.nva.pojo.NhanVien;
+import com.mycompany.project.management.App;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import com.nva.pojo.TimeField;
-import com.nva.services.NhanVienServices;
 import com.nva.services.TimeFieldServices;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 
 /**
  *
  * @author ADMIN
  */
-public class StatisticCustomTimeController implements Initializable {
+public class StatisticQuarterController implements Initializable {
     @FXML private ComboBox<TimeField> cbTimeField;
     @FXML public void switchToManagerFunctionsPage() throws IOException {
         App.setRoot("manager-functions-page");
@@ -36,7 +32,7 @@ public class StatisticCustomTimeController implements Initializable {
         TimeFieldServices tf = new TimeFieldServices();
         List<TimeField> listTf = tf.getDanhSachTimeField();
         this.cbTimeField.setItems(FXCollections.observableList(listTf));
-        this.cbTimeField.setPromptText(listTf.get(0).getName());
+        this.cbTimeField.setPromptText(listTf.get(2).getName());
     }
     @FXML
     public void changTimeField(ActionEvent event) throws IOException {

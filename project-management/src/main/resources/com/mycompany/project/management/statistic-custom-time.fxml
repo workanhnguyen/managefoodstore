@@ -33,15 +33,18 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="173.0" layoutY="154.0" prefHeight="35.0" prefWidth="283.0" text="THỐNG KÊ THEO">
+      <Label fx:id="l" layoutX="173.0" layoutY="154.0" prefHeight="35.0" prefWidth="283.0" text="THỐNG KÊ THEO">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" style="-fx-background-color: #efb620;" text="THỐNG KÊ" textFill="WHITE">
+      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" styleClass="bg-yellow" stylesheets="@../../../../css/GlobalStyle.css" text="THỐNG KÊ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Label layoutX="382.0" layoutY="216.0" prefHeight="35.0" prefWidth="212.0" text="Thời gian bắt đầu:">
          <font>
@@ -100,7 +103,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTimeField" layoutX="381.0" layoutY="147.0" prefHeight="50.0" prefWidth="562.0" style="-fx-background-color: white; -fx-border-color: #333333;" styleClass="style">
+      <ComboBox fx:id="cbTimeField" layoutX="381.0" layoutY="147.0" onAction="#changTimeField" prefHeight="50.0" prefWidth="562.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
