@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane accessibleRole="TEXT_FIELD" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane accessibleRole="TEXT_FIELD" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.HandleBillPageController">
    <children>
       <ImageView fitHeight="80.0" fitWidth="140.0" layoutX="36.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -123,8 +123,8 @@
          </children>
       </Pane>
       <Text layoutX="692.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <TextField layoutX="734.0" layoutY="187.0" prefHeight="36.0" prefWidth="238.0" promptText="Nhập mã khách hàng" style="-fx-background-color: #ffffff;" />
-      <Button layoutX="974.0" layoutY="186.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #feb901; -fx-font-size: 14; -fx-font-weight: bold;" text="Tìm kiếm">
+      <TextField layoutX="734.0" layoutY="187.0" prefHeight="36.0" prefWidth="238.0" promptText="Nhập mã khách hàng" />
+      <Button layoutX="971.0" layoutY="185.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #feb901; -fx-font-size: 14; -fx-font-weight: bold;" text="Tìm kiếm">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -139,51 +139,56 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Line endX="14.0" endY="-68.86666870117188" layoutX="734.0" layoutY="350.0" startX="14.0" startY="9.533355712890625" />
-      <Label layoutX="764.0" layoutY="307.0" text="Tổng điểm:">
+      <Line endX="14.0" endY="-68.86666870117188" layoutX="734.0" layoutY="350.0" startX="14.0" startY="34.26666259765625" />
+      <Label layoutX="764.0" layoutY="319.0" text="Tổng điểm:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="765.0" layoutY="339.0" text="Điểm cộng thêm:">
+      <Label layoutX="765.0" layoutY="362.0" text="Điểm cộng thêm:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="938.0" layoutY="274.0" text="Trịnh Tấn Sĩ">
+      <Label layoutX="930.0" layoutY="270.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Trịnh Tấn Sĩ">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="939.0" layoutY="306.0" text="20000">
+      <Label layoutX="929.0" layoutY="313.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="20000">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="939.0" layoutY="339.0" text="12400">
+      <Label layoutX="929.0" layoutY="357.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="12400">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="748.0" layoutY="382.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="Sử dụng điểm">
+      <Button layoutX="737.0" layoutY="451.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="Sử dụng điểm">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="279.0" layoutY="617.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="THANH TOÁN">
+      <Button layoutX="279.0" layoutY="617.0" mnemonicParsing="false" onAction="#switchToEmployeeFunctionsPage" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="THANH TOÁN">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#SwitchToEmployeeOrderPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#switchToEmployeeFunctionsPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
          </styleClass>
       </Button>
-      <Button layoutX="707.0" layoutY="616.0" mnemonicParsing="false" onAction="#switchToRegisterMemberPage" prefHeight="61.0" prefWidth="345.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ THÀNH VIÊN MỚI">
+      <Label layoutX="736.0" layoutY="409.0" text="Thông báo nếu khách không đủ điểm để dùng" textFill="#bf0808">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="720.0" layoutY="617.0" mnemonicParsing="false" onAction="#switchToRegisterMemberPage" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ THÀNH VIÊN">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-blue" />

@@ -13,6 +13,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-box-sizing: border-box;
 }
 
+/* Root variables */
+:root {
+
+}
+
 /*-------------------- BUTTON -------------------*/
 .btn {
     -fx-text-fill: #ffffff;

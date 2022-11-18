@@ -4,23 +4,18 @@
  */
 package com.mycompany.project.management;
 
-import com.nva.pojo.NhanVien;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import com.nva.pojo.TimeField;
-import com.nva.services.NhanVienServices;
 import com.nva.services.TimeFieldServices;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 
 /**
  *

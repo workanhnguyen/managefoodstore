@@ -13,4 +13,8 @@ public class HandleBillPageController {
     private void switchToRegisterMemberPage() throws IOException {
         App.setRoot("register-member-page");
     }
+    @FXML
+    private void switchToEmployeeFunctionsPage() throws IOException {
+        App.setRoot("employee-functions-page");
+    }
 }

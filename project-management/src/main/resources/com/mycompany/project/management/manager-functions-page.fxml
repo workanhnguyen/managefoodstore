@@ -26,7 +26,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="893.0" layoutY="71.0" text="Họ và tên quản trị viên ">
+      <Label fx:id="hoTen" layoutX="893.0" layoutY="71.0" text="Họ và tên quản trị viên ">
          <font>
             <Font size="24.0" />
          </font>

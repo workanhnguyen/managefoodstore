@@ -9,7 +9,15 @@ package com.nva.pojo;
  * @author ASUS
  */
 public class Ban {
+    private String maBan;
+    private int soLuongChoNgoi;
+    private boolean tinhTrang;
 
+    public Ban(String maBan, int soLuongChoNgoi, boolean tinhTrang) {
+        this.maBan = maBan;
+        this.soLuongChoNgoi = soLuongChoNgoi;
+        this.tinhTrang = tinhTrang;
+    }
     /**
      * @return the maBan
      */
@@ -50,10 +58,5 @@ public class Ban {
      */
     public void setTinhTrang(boolean tinhTrang) {
         this.tinhTrang = tinhTrang;
-    }
-    private String maBan;
-    private int soLuongChoNgoi;
-    private boolean tinhTrang;
-    
-    
+    } 
 }

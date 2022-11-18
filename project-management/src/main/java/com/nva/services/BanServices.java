@@ -4,9 +4,8 @@
  */
 package com.nva.services;
 
-import com.nva.pojo.NhanVien;
+import com.nva.pojo.Ban;
 import commonuse.JdbcUtils;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,18 +17,17 @@ import java.util.List;
  *
  * @author ASUS
  */
-public class NhanVienServices {
-    public static String hoTen;
-    public List<NhanVien> getDanhSachNhanVien() {
-        List<NhanVien> danhSach = new ArrayList<>();
+public class BanServices {
+    public List<Ban> getDanhSachBan() {
+        List<Ban> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM NhanVien");
+            ResultSet rs = stm.executeQuery("SELECT * FROM ban");
 
             while (rs.next()) {
-                NhanVien nv = new NhanVien(rs.getString("Id"), rs.getFloat("HeSoLuong"),
-                        rs.getInt("LuongCoBan"), rs.getDate("NgayVaoLam"));
-                danhSach.add(nv);
+                Ban b = new Ban(rs.getString("MaBan"), rs.getInt("SoLuongChoNgoi"),
+                        rs.getBoolean("TinhTrang"));
+                danhSach.add(b);
             }
         } catch (SQLException e) {
             e.printStackTrace();

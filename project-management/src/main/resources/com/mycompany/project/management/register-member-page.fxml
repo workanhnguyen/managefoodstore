@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.project.management.RegisterMemberPageController">
    <children>
       <ImageView fitHeight="80.0" fitWidth="140.0" layoutX="36.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,7 +34,7 @@
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#SwitchToHandleBillPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
+      <Button layoutX="41.0" layoutY="616.0" mnemonicParsing="false" onAction="#switchToHandleBillPage" prefHeight="61.0" prefWidth="179.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
@@ -83,6 +83,11 @@
       <Label layoutX="479.0" layoutY="468.0" prefHeight="39.0" prefWidth="314.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="5700">
          <font>
             <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="542.0" text="Thông báo thành công hoặc lỗi nếu có" textFill="#d11414">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>
