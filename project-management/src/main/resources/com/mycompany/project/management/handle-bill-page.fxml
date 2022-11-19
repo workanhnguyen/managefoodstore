@@ -129,43 +129,43 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="734.0" layoutY="243.0" text="Kết quả tìm kiếm:">
+      <Label layoutX="734.0" layoutY="260.0" text="Kết quả tìm kiếm:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="763.0" layoutY="275.0" text="Tên khách hàng:">
+      <Label layoutX="763.0" layoutY="292.0" text="Tên khách hàng:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Line endX="14.0" endY="-68.86666870117188" layoutX="734.0" layoutY="350.0" startX="14.0" startY="34.26666259765625" />
-      <Label layoutX="764.0" layoutY="319.0" text="Tổng điểm:">
+      <Line endX="14.0" endY="-68.86666870117188" layoutX="734.0" layoutY="367.0" startX="14.0" startY="34.26666259765625" />
+      <Label layoutX="764.0" layoutY="336.0" text="Tổng điểm:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="765.0" layoutY="362.0" text="Điểm cộng thêm:">
+      <Label layoutX="765.0" layoutY="379.0" text="Điểm cộng thêm:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="930.0" layoutY="270.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Trịnh Tấn Sĩ">
+      <Label layoutX="930.0" layoutY="287.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Trịnh Tấn Sĩ">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="929.0" layoutY="313.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="20000">
+      <Label layoutX="929.0" layoutY="330.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="20000">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="929.0" layoutY="357.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="12400">
+      <Label layoutX="929.0" layoutY="374.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="12400">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="737.0" layoutY="451.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="Sử dụng điểm">
+      <Button layoutX="736.0" layoutY="427.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-font-size: 16; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="Sử dụng điểm">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -183,7 +183,7 @@
             <String fx:value="bg-yellow" />
          </styleClass>
       </Button>
-      <Label layoutX="736.0" layoutY="409.0" text="Thông báo nếu khách không đủ điểm để dùng" textFill="#bf0808">
+      <Label layoutX="736.0" layoutY="234.0" text="Thông báo lỗi" textFill="#bf0808">
          <font>
             <Font size="14.0" />
          </font>

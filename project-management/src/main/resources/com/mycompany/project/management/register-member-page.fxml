@@ -75,11 +75,6 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="479.0" layoutY="386.0" prefHeight="39.0" prefWidth="314.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="0397583456">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
       <Label layoutX="479.0" layoutY="468.0" prefHeight="39.0" prefWidth="314.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="5700">
          <font>
             <Font name="System Bold" size="16.0" />
@@ -90,5 +85,10 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <TextField layoutX="480.0" layoutY="385.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

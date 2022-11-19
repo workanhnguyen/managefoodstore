@@ -33,39 +33,19 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField layoutX="156.0" layoutY="149.0" prefHeight="34.0" prefWidth="188.0" />
       <Label layoutX="697.0" layoutY="149.0" text="HÓA ĐƠN MUA NGUYÊN LIỆU">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="153.0" text="Nhập mã:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="342.0" layoutY="148.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="98.0" style="-fx-background-radius: 0;" stylesheets="@../../../../css/GlobalStyle.css" text="KIỂM TRA">
-         <styleClass>
-            <String fx:value="btn" />
-            <String fx:value="bg-yellow" />
-         </styleClass>
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <TableView layoutX="35.0" layoutY="197.0" prefHeight="114.0" prefWidth="406.0">
+      <TableView layoutX="35.0" layoutY="161.0" prefHeight="359.0" prefWidth="568.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="257.6000061035156" text="Tên" />
-            <TableColumn prefWidth="72.79997253417969" text="Số lượng" />
+          <TableColumn prefWidth="138.39999389648438" text="ID" />
+          <TableColumn prefWidth="333.5999755859375" text="Tên" />
+            <TableColumn prefWidth="96.79998779296875" text="Số lượng" />
         </columns>
       </TableView>
-      <Label layoutX="36.0" layoutY="331.0" text="* Dòng thông báo nếu xuất hiện lỗi" textFill="#fc0909">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="34.0" layoutY="369.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="164.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT HÀNG">
+      <Button layoutX="34.0" layoutY="537.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="245.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT THÊM">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -126,7 +106,7 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="696.0" layoutY="537.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="188.0" stylesheets="@../../../../css/GlobalStyle.css" text="XUẤT PHIẾU">
+      <Button layoutX="695.0" layoutY="537.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="228.0" stylesheets="@../../../../css/GlobalStyle.css" text="XUẤT PHIẾU">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -135,7 +115,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="975.0" layoutY="535.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY BỎ" textFill="#b40a0a">
+      <Button layoutX="934.0" layoutY="535.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="220.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY BỎ" textFill="#b40a0a">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-red" />
@@ -144,7 +124,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Label layoutX="695.0" layoutY="502.0" text="* Dòng thông báo nếu xuất hiện lỗi" textFill="#fc0909">
+      <Label layoutX="697.0" layoutY="502.0" text="Thông báo thành công hoặc thông báo lỗi" textFill="#fc0909">
          <font>
             <Font size="14.0" />
          </font>

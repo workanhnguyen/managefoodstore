@@ -190,7 +190,7 @@ DROP TABLE IF EXISTS `nguoidung`;
 CREATE TABLE `nguoidung` (
   `Id` char(10) NOT NULL,
   `MatKhau` varchar(20) NOT NULL,
-  `Ho` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Ho` varchar(20) DEFAULT NULL,
   `Ten` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `NgaySinh` date NOT NULL,
   `DiaChi` longtext,
@@ -351,4 +351,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-19 14:25:52
+-- Dump completed on 2022-11-19 19:05:03

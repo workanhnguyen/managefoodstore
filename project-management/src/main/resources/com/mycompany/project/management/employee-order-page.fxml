@@ -29,9 +29,8 @@
       </Label>
       <TableView layoutX="28.0" layoutY="233.0" prefHeight="299.0" prefWidth="554.0">
         <columns>
-          <TableColumn minWidth="0.0" prefWidth="232.26665878295898" text="Tên món ăn" />
-            <TableColumn minWidth="0.0" prefWidth="124.26669311523438" text="Đơn giá" />
-            <TableColumn minWidth="0.0" prefWidth="194.1334228515625" text="Tình trạng" />
+          <TableColumn minWidth="0.0" prefWidth="323.9999942779541" text="Tên món ăn" />
+            <TableColumn minWidth="0.0" prefWidth="229.60003662109375" text="Đơn giá" />
         </columns>
       </TableView>
       <Button layoutX="28.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToEmployeeFunctionsPage" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
