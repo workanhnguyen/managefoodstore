@@ -26,7 +26,7 @@
             <Image url="@../../../../images/employee-avt.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER_RIGHT" layoutX="766.0" layoutY="71.0" prefHeight="35.0" prefWidth="371.0" text="Họ và tên nhân viên ">
+      <Label fx:id="hoTen" alignment="CENTER_RIGHT" layoutX="766.0" layoutY="71.0" prefHeight="35.0" prefWidth="371.0" text="Họ và tên nhân viên ">
          <font>
             <Font size="24.0" />
          </font>

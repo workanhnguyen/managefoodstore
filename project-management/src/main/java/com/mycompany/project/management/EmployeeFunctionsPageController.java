@@ -7,11 +7,13 @@ import java.util.ResourceBundle;
 
 import com.nva.pojo.Ban;
 import com.nva.services.BanServices;
+import com.nva.services.NhanVienServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -29,6 +31,7 @@ public class EmployeeFunctionsPageController implements Initializable {
     @FXML private Button ban08;
     @FXML private Button ban09;
     @FXML private Button ban10;
+    @FXML private Label hoTen;
     
     //Khai bao bien thuong
     public static String maBan;
@@ -38,6 +41,7 @@ public class EmployeeFunctionsPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         render();
+        hoTen.setText(NhanVienServices.hoTen);
     }
     @FXML
     private void switchToMainLoginPage() throws IOException {
