@@ -49,7 +49,7 @@
             <Image url="@../../../../images/employee-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="936.0" layoutY="64.0" text="Họ và tên nhân viên">
+      <Label alignment="CENTER_RIGHT" layoutX="783.0" layoutY="64.0" prefHeight="35.0" prefWidth="365.0" text="Họ và tên nhân viên">
          <font>
             <Font size="24.0" />
          </font>
@@ -63,7 +63,7 @@
          <columns>
             <TableColumn minWidth="0.0" prefWidth="232.26665878295898" text="Tên món ăn" />
             <TableColumn minWidth="0.0" prefWidth="124.26669311523438" text="Đơn giá" />
-            <TableColumn minWidth="0.0" prefWidth="194.1334228515625" text="Tình trạng" />
+            <TableColumn minWidth="0.0" prefWidth="194.1334228515625" text="Số lượng đặt" />
          </columns>
       </TableView>
       <Label layoutX="693.0" layoutY="184.0" prefHeight="35.0" prefWidth="488.0" text="Danh sách món ăn đã đặt">
