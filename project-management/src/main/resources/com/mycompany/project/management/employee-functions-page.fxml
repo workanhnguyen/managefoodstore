@@ -52,7 +52,7 @@
             <String fx:value="bg-red" />
          </styleClass>
       </Button>
-      <Button fx:id="ban10" layoutX="1039.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToEmployeeOrderPage" prefHeight="128.0" prefWidth="130.0" stylesheets="@../../../../css/GlobalStyle.css" text="BÀN 10 SL: 10" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="ban10" layoutX="1039.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToEmployeeOrderPage" prefHeight="128.0" prefWidth="130.0" stylesheets="@../../../../css/GlobalStyle.css" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -112,7 +112,7 @@
             <String fx:value="function" />
          </styleClass>
       </Button>
-      <Button fx:id="ban05" layoutX="1037.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchToEmployeeOrderPage" prefHeight="128.0" prefWidth="130.0" stylesheets="@../../../../css/GlobalStyle.css" text="BÀN 05 SL: 6" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="ban05" layoutX="1037.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchToEmployeeOrderPage" prefHeight="128.0" prefWidth="130.0" stylesheets="@../../../../css/GlobalStyle.css" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

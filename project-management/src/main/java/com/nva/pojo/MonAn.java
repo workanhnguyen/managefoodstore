@@ -23,6 +23,11 @@ public class MonAn {
 
     }
 
+    @Override
+    public String toString() {
+        return this.tenMonAn;
+    }
+
     public String getMaMonAn() {
         return maMonAn;
     }

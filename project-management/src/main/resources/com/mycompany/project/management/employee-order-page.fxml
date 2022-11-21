@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -27,12 +28,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="28.0" layoutY="233.0" prefHeight="299.0" prefWidth="554.0">
-        <columns>
-          <TableColumn minWidth="0.0" prefWidth="323.9999942779541" text="Tên món ăn" />
-            <TableColumn minWidth="0.0" prefWidth="229.60003662109375" text="Đơn giá" />
-        </columns>
-      </TableView>
       <Button layoutX="28.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToEmployeeFunctionsPage" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -48,7 +43,7 @@
             <Image url="@../../../../images/employee-avt.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER_RIGHT" layoutX="783.0" layoutY="64.0" prefHeight="35.0" prefWidth="365.0" text="Họ và tên nhân viên">
+      <Label fx:id="hoTen" alignment="CENTER_RIGHT" layoutX="783.0" layoutY="64.0" prefHeight="35.0" prefWidth="365.0" text="Họ và tên nhân viên">
          <font>
             <Font size="24.0" />
          </font>
@@ -58,10 +53,10 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="694.0" layoutY="233.0" prefHeight="300.0" prefWidth="554.0">
+      <TableView fx:id="tbvOrderedDish" layoutX="694.0" layoutY="233.0" prefHeight="300.0" prefWidth="554.0">
          <columns>
-            <TableColumn minWidth="0.0" prefWidth="232.26665878295898" text="Tên món ăn" />
-            <TableColumn minWidth="0.0" prefWidth="124.26669311523438" text="Đơn giá" />
+            <TableColumn fx:id="tbvOrderedDish_tenMonAn" minWidth="0.0" prefWidth="232.26665878295898" text="Tên món ăn" />
+            <TableColumn fx:id="tbvOrderedDish_donGia" minWidth="0.0" prefWidth="124.26669311523438" text="Đơn giá" />
             <TableColumn minWidth="0.0" prefWidth="194.1334228515625" text="Số lượng đặt" />
          </columns>
       </TableView>
@@ -70,7 +65,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="27.0" layoutY="549.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="THÊM MÓN">
+      <Button layoutX="27.0" layoutY="549.0" mnemonicParsing="false" onAction="#addDish" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="THÊM MÓN">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -97,6 +92,15 @@
             <String fx:value="bg-blue" />
          </styleClass>
       </Button>
+      <TableView fx:id="tbvDish" layoutX="30.0" layoutY="233.0" prefHeight="300.0" prefWidth="488.0">
+        <columns>
+          <TableColumn fx:id="tbvDish_tenMonAn" prefWidth="336.7999687194824" text="Tên món ăn" />
+          <TableColumn fx:id="tbvDish_donGia" prefWidth="151.20001220703125" text="Đơn giá" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
    </children>
    <styleClass>
       <String fx:value="btn" />
