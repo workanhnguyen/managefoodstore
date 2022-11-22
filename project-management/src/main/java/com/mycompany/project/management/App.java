@@ -20,7 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setResizable(false);
-        scene = new Scene(loadFXML("home-page"), 1280, 710);
+        scene = new Scene(loadFXML("employee-order-page"), 1280, 710);
 
         stage.setOnHiding(et -> {
             Connection conn = null;

@@ -57,15 +57,18 @@
          <columns>
             <TableColumn fx:id="tbvOrderedDish_tenMonAn" minWidth="0.0" prefWidth="232.26665878295898" text="Tên món ăn" />
             <TableColumn fx:id="tbvOrderedDish_donGia" minWidth="0.0" prefWidth="124.26669311523438" text="Đơn giá" />
-            <TableColumn minWidth="0.0" prefWidth="194.1334228515625" text="Số lượng đặt" />
+            <TableColumn fx:id="tbvOrderedDish_soLuong" minWidth="0.0" prefWidth="194.1334228515625" text="Số lượng đặt" />
          </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </TableView>
       <Label layoutX="693.0" layoutY="184.0" prefHeight="35.0" prefWidth="488.0" text="Danh sách món ăn đã đặt">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="27.0" layoutY="549.0" mnemonicParsing="false" onAction="#addDish" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="THÊM MÓN">
+      <Button layoutX="27.0" layoutY="549.0" mnemonicParsing="false" onAction="#btnAddDish" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="THÊM MÓN">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -74,7 +77,7 @@
             <String fx:value="bg-green" />
          </styleClass>
       </Button>
-      <Button layoutX="693.0" layoutY="549.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY MÓN">
+      <Button layoutX="693.0" layoutY="549.0" mnemonicParsing="false" onAction="#btnDelDish" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY MÓN">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
