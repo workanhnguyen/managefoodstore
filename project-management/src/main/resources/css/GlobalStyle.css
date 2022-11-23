@@ -13,6 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-box-sizing: border-box;
 }
 
+
 /* Root variables */
 :root {
     
@@ -60,6 +61,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #37B6FF;
 }
 
+.bg-blue:hover {
+    -fx-background-color: #329ddf;
+}
 /*---------- Input box CSS ------------*/
 .input {
     -fx-background-color: transparent;

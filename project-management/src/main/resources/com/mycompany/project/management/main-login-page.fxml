@@ -47,5 +47,14 @@
             <String fx:value="bg-yellow" />
          </styleClass>
       </Button>
+      <Button layoutX="465.0" layoutY="561.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="46.0" prefWidth="334.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐÓNG ỨNG DỤNG">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="bg-red" />
+         </styleClass>
+      </Button>
    </children>
 </Pane>

@@ -48,7 +48,7 @@ public class EmployeeFunctionsPageController implements Initializable {
         App.setRoot("main-login-page");
     }
     @FXML
-    private void switchToEmployeeOrderPage(ActionEvent event) throws IOException {
+    private void changePage(ActionEvent event) throws IOException {
         String str = event.getTarget().toString();
         maBan = str.substring(str.indexOf("ban", 0), str.indexOf("ban") + 5).toUpperCase();
         for (Ban ban: banList) {
