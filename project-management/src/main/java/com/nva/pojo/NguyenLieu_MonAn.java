@@ -11,7 +11,11 @@ package com.nva.pojo;
 public class NguyenLieu_MonAn {
     private String maMonAn;
     private String maNguyenLieu;
-
+    public NguyenLieu_MonAn() {}
+    public NguyenLieu_MonAn(String maMonAn, String maNguyenLieu) {
+        this.maMonAn = maMonAn;
+        this.maNguyenLieu = maNguyenLieu;
+    }
     public String getMaMonAn() {
         return maMonAn;
     }

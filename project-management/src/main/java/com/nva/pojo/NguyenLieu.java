@@ -13,7 +13,13 @@ public class NguyenLieu {
     private String tenNguyenLieu;
     private int soLuong;
     private String donVi;
-
+    public NguyenLieu() {}
+    public NguyenLieu(String maNguyenLieu, String tenNguyenLieu, int soLuong, String donVi) {
+        this.maNguyenLieu = maNguyenLieu;
+        this.tenNguyenLieu = tenNguyenLieu;
+        this.soLuong = soLuong;
+        this.donVi = donVi;
+    }
     public String getMaNguyenLieu() {
         return maNguyenLieu;
     }
