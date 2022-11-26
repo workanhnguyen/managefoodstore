@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 import com.nva.pojo.NguoiDung;
+import com.nva.pojo.NhanVien;
 import com.nva.services.NguoiDungServices;
 import com.nva.services.NhanVienServices;
 import javafx.fxml.FXML;
@@ -33,10 +34,10 @@ public class MainLoginPageController {
                     alertInfo.setText("Tên đăng nhập hoặc mật khẩu không chính xác!");
                 } else {
                     if (nd.isVaiTro()) {
-                        NguoiDungServices.hoTen = nd.getHo() + " " + nd.getTen();
+                        NguoiDungServices.nguoiDung = nd;
                         App.setRoot("manager-functions-page");
                     } else {
-                        NhanVienServices.hoTen = nd.getHo() + " " + nd.getTen();
+                        NguoiDungServices.nguoiDung = nd;
                         App.setRoot("employee-functions-page");
                     }
                 }

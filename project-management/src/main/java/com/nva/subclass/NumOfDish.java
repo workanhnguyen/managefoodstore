@@ -6,6 +6,7 @@ public class NumOfDish {
     private String tenMonAn;
     private int donGia;
     private int soLuong;
+    private int thanhTien;
 
     public NumOfDish() {
     }
@@ -15,6 +16,13 @@ public class NumOfDish {
         this.setTenMonAn(tenMonAn);
         this.setDonGia(donGia);
         this.setSoLuong(soLuong);
+    }
+    public NumOfDish(String maMonAn, String tenMonAn, int donGia, int soLuong, int thanhTien) {
+        this.setMaMonAn(maMonAn);
+        this.setTenMonAn(tenMonAn);
+        this.setDonGia(donGia);
+        this.setSoLuong(soLuong);
+        this.thanhTien = thanhTien;
     }
 
     public int getSoLuong() {
@@ -47,5 +55,13 @@ public class NumOfDish {
 
     public void setDonGia(int donGia) {
         this.donGia = donGia;
+    }
+
+    public int getThanhTien() {
+        return thanhTien;
+    }
+
+    public void setThanhTien(int thanhTien) {
+        this.thanhTien = thanhTien;
     }
 }

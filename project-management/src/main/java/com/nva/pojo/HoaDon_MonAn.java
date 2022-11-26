@@ -12,6 +12,12 @@ public class HoaDon_MonAn {
     private String maHoaDon;
     private String maMonAn;
     private int soLuong;
+    public HoaDon_MonAn() {}
+    public HoaDon_MonAn(String maHoaDon, String maMonAn, int soLuong) {
+        this.maHoaDon = maHoaDon;
+        this.maMonAn = maMonAn;
+        this.soLuong = soLuong;
+    }
 
     public String getMaHoaDon() {
         return maHoaDon;

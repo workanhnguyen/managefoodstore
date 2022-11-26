@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NguoiDungServices {
-    public static String hoTen;
+    public static NguoiDung nguoiDung = new NguoiDung();
     public List<NguoiDung> getDanhSachNguoiDung() {
         List<NguoiDung> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
@@ -33,5 +33,22 @@ public class NguoiDungServices {
             e.printStackTrace();
         }
         return danhSach;
+    }
+    public String getFullName(String id) {
+        String resultStr = "";
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(String.format("" +
+                    "SELECT Ho, Ten\n" +
+                    "FROM foodstoredb.nguoidung\n" +
+                    "WHERE Id = '%s'", id));
+
+            if (rs.next()) {
+                resultStr = rs.getString(1) + " " + rs.getString(2);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultStr;
     }
 }

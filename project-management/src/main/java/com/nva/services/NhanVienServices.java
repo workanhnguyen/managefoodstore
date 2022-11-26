@@ -19,7 +19,7 @@ import java.util.List;
  * @author ASUS
  */
 public class NhanVienServices {
-    public static String hoTen;
+    public static NhanVien nhanVien = new NhanVien();
     public List<NhanVien> getDanhSachNhanVien() {
         List<NhanVien> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {

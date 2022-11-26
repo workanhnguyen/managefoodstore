@@ -22,13 +22,13 @@
             <Image url="@../../../../images/employee-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="940.0" layoutY="48.0" text="Họ và tên nhân viên">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="676.0" layoutY="48.0" prefHeight="35.0" prefWidth="476.0" text="Họ và tên nhân viên">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Text layoutX="692.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Button layoutX="443.0" layoutY="616.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ THÀNH VIÊN">
+      <Text layoutX="692.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="443.0" layoutY="616.0" mnemonicParsing="false" onAction="#btnDangKy" prefHeight="61.0" prefWidth="395.0" style="-fx-font-size: 24; -fx-font-weight: bold;" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ THÀNH VIÊN">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -40,52 +40,42 @@
             <String fx:value="bg-yellow" />
          </styleClass>
       </Button>
-      <Label layoutX="478.0" layoutY="97.0" text="ĐĂNG KÝ THÀNH VIÊN MỚI">
+      <Label layoutX="478.0" layoutY="147.0" text="ĐĂNG KÝ THÀNH VIÊN MỚI">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="480.0" layoutY="179.0" text="Họ khách hàng:">
+      <Label layoutX="480.0" layoutY="229.0" text="Họ khách hàng:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="480.0" layoutY="213.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
+      <TextField fx:id="tfHoKhachHang" layoutX="480.0" layoutY="263.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="480.0" layoutY="267.0" text="Tên khách hàng:">
+      <Label layoutX="480.0" layoutY="317.0" text="Tên khách hàng:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="480.0" layoutY="299.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
+      <TextField fx:id="tfTenKhachHang" layoutX="480.0" layoutY="349.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="481.0" layoutY="352.0" text="Số điện thoại:">
+      <Label layoutX="481.0" layoutY="402.0" text="Số điện thoại:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="479.0" layoutY="438.0" text="Điểm được cộng:">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="479.0" layoutY="468.0" prefHeight="39.0" prefWidth="314.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="5700">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="479.0" layoutY="542.0" text="Thông báo thành công hoặc lỗi nếu có" textFill="#d11414">
+      <Label fx:id="lbAlert" layoutX="481.0" layoutY="501.0" prefHeight="20.0" prefWidth="313.0" textFill="#d11414" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="480.0" layoutY="385.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
+      <TextField fx:id="tfSoDienThoai" layoutX="480.0" layoutY="435.0" prefHeight="39.0" prefWidth="314.0" style="-fx-padding: 4 8 4 8; -fx-font-size: 14;">
          <font>
             <Font size="14.0" />
          </font>

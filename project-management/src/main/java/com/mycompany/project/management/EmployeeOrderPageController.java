@@ -8,12 +8,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-import com.nva.pojo.Ban;
-import com.nva.pojo.MonAn;
-import com.nva.pojo.NguyenLieu;
-import com.nva.pojo.NguyenLieu_MonAn;
+import com.nva.pojo.*;
 import com.nva.services.*;
 import com.nva.subclass.NumOfDish;
+import commonuse.Utility;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,8 +34,11 @@ public class EmployeeOrderPageController implements Initializable {
 
     //Khai báo biến thường
     MonAnServices m = new MonAnServices();
+    HoaDonServices h = new HoaDonServices();
     NguyenLieuServices nl = new NguyenLieuServices();
     NguyenLieu_MonAnServices nl_ma = new NguyenLieu_MonAnServices();
+    HoaDonTamThoiServices tempHd = new HoaDonTamThoiServices();
+    HoaDonTamThoi_MonAnServices tempHd_Ma = new HoaDonTamThoi_MonAnServices();
     BanServices b = new BanServices();
     List<MonAn> listMA = m.getDanhSachMonAn();
     List<NguyenLieu> listNL = nl.getDanhSachNguyenLieu();
@@ -47,17 +48,17 @@ public class EmployeeOrderPageController implements Initializable {
     /**
      * Dùng để lưu danh sách các món đã đặt (order)
      */
-    public static List<MonAn> listOrdered = new ArrayList<>();
+    public List<MonAn> listOrdered = new ArrayList<>();
     /**
      * Dùng cho xử lý hóa đơn sau này
      */
-    public static List<NumOfDish> numList;
+    public List<NumOfDish> numList;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.maBan.setText(chuanHoaMaBan(EmployeeFunctionsPageController.maBan));
-        this.hoTen.setText(NhanVienServices.hoTen);
+        this.maBan.setText(chuanHoaMaBan(BanServices.ban.getMaBan()));
+        this.hoTen.setText(NguoiDungServices.nguoiDung.getFullName());
         render();
     }
     @FXML
@@ -71,8 +72,6 @@ public class EmployeeOrderPageController implements Initializable {
 
             allowToAddDish = nl.kiemTraTinhTrangNguyenLieu(danhSachMaNguyenLieu);
             allowToUseMaterial = nl.suDungNguyenLieu(danhSachMaNguyenLieu);
-
-            hoTen.setText(String.valueOf(danhSachMaNguyenLieu.size()));
             if (allowToAddDish && allowToUseMaterial) {
                 listOrdered.add(monAn);
 
@@ -83,7 +82,7 @@ public class EmployeeOrderPageController implements Initializable {
                 this.tbvOrderedDish_soLuong.setCellValueFactory(new PropertyValueFactory<NumOfDish, Integer>("soLuong"));
                 this.tbvOrderedDish.setItems(FXCollections.observableArrayList(numList));
             } else {
-                showAlertDialog("Thông báo",
+                Utility.showAlertDialog("Thông báo",
                         "Không thể đặt món ăn do tình trạng nguyên liệu không đáp ứng!",
                         Alert.AlertType.ERROR);
             }
@@ -113,11 +112,56 @@ public class EmployeeOrderPageController implements Initializable {
         }
     }
     @FXML
-    private void btnConfirmOrderDish() {
+    private void btnConfirmOrderDish() throws SQLException, IOException {
         if (numList == null || numList.isEmpty()) {
-            showAlertDialog("Thông báo", "Vui lòng chọn ít nhất một món!", Alert.AlertType.CONFIRMATION);
+            Utility.showAlertDialog("Thông báo", "Vui lòng chọn ít nhất một món!", Alert.AlertType.WARNING);
         } else {
+            HoaDonTamThoi tempBill = new HoaDonTamThoi();
+            tempBill.setMaHoaDon(h.getMaHoaDonLonNhat());
+            tempBill.setMaBan(BanServices.ban.getMaBan());
+            tempBill.setMaNhanVien(NguoiDungServices.nguoiDung.getId());
+            tempBill.setListOrderedDish(numList);
 
+            if (b.capNhatTrangThai(BanServices.ban.getMaBan(), 0)) {
+                HoaDonServices.listTempBill.add(tempBill);
+
+                //Nếu thêm hóa đơn tạm thời vào foodstoredb.hoadontamthoi thành công
+                if (tempHd.setHoaDonTamThoi(tempBill)) {
+                    // Kiểm tra dữ liệu trước khi đưa vào foodstoredb.hoadontamthoi_monan
+                    boolean isValid = true;
+                    for (NumOfDish nd: numList) {
+                        if (!tempHd_Ma.kiemTraDuLieuHopLe(tempBill.getMaHoaDon(), nd.getMaMonAn())) {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                    if (isValid) {
+                        for (NumOfDish nd: numList) {
+                            HoaDonTamThoi_MonAn hoaDonTamThoi_monAn = new HoaDonTamThoi_MonAn(
+                                    tempBill.getMaHoaDon(),
+                                    nd.getMaMonAn(),
+                                    nd.getTenMonAn(),
+                                    nd.getSoLuong(),
+                                    nd.getDonGia(),
+                                    nd.getThanhTien()
+                            );
+                            tempHd_Ma.setDuLieuHoaDonTamThoi_MonAnMoi(hoaDonTamThoi_monAn);
+                        }
+                        Utility.showAlertDialog("Thông báo",
+                                "Đặt món thành công!", Alert.AlertType.INFORMATION);
+                        App.setRoot("employee-functions-page");
+                    } else {
+                        Utility.showAlertDialog("Thông báo",
+                                "Không thể xác nhận đặt món (ErrorCode: 001)!", Alert.AlertType.INFORMATION);
+                    }
+                } else {
+                    Utility.showAlertDialog("Thông báo",
+                            "Không thể xác nhận đặt món (ErrorCode: 002)!", Alert.AlertType.INFORMATION);
+                }
+            }
+            else
+                Utility.showAlertDialog("Thông báo",
+                        "Không thể xác nhận đặt món! (ErrorCode: 003)", Alert.AlertType.ERROR);
         }
     }
     private void countDish() {
@@ -125,6 +169,7 @@ public class EmployeeOrderPageController implements Initializable {
         numList = new ArrayList<>();
         for (MonAn monAn: temp) {
             NumOfDish numOfDish = new NumOfDish(monAn.getMaMonAn(), monAn.getTenMonAn(), monAn.getDonGia(), 1);
+            numOfDish.setThanhTien(numOfDish.getDonGia());
             numList.add(numOfDish);
         }
         for(int i = 0; i < numList.size(); i++) {
@@ -132,6 +177,7 @@ public class EmployeeOrderPageController implements Initializable {
             for (int j = 0; j < listOrdered.size(); j++) {
                 if (numList.get(i).getMaMonAn().equals(listOrdered.get(j).getMaMonAn())) {
                     numList.get(i).setSoLuong(count++);
+                    numList.get(i).setThanhTien(numList.get(i).getDonGia() * count);
                 }
             }
         }
@@ -140,14 +186,13 @@ public class EmployeeOrderPageController implements Initializable {
     private void switchToEmployeeFunctionsPage() throws IOException {
         /** Reset lại danh sách các món đặt */
         try {
-            for (int i = 0; i < numList.size(); i++) {
-                for (int j = 0; j < numList.get(i).getSoLuong(); j++) {
-                    nl.hoanTacNguyenLieu(nl_ma.getDanhSachMaNguyenLieu(numList.get(i).getMaMonAn()));
+            for (NumOfDish numOfDish : numList) {
+                for (int j = 0; j < numOfDish.getSoLuong(); j++) {
+                    nl.hoanTacNguyenLieu(nl_ma.getDanhSachMaNguyenLieu(numOfDish.getMaMonAn()));
                 }
             }
-            numList.clear();
             listOrdered.clear();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
         finally {
@@ -199,12 +244,5 @@ public class EmployeeOrderPageController implements Initializable {
         return resultStr;
     }
     /** Tạo và hiển thị một dialog thông báo */
-    private void showAlertDialog(String title, String content, Alert.AlertType type) {
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
 }
 

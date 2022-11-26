@@ -24,7 +24,7 @@ public class ManagerFunctionsPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        hoTen.setText(NguoiDungServices.hoTen);
+        hoTen.setText(NguoiDungServices.nguoiDung.getFullName());
     }
     @FXML
     private void switchToManageListOfEmployeePage() throws IOException {

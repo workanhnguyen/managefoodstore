@@ -25,7 +25,7 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setTitle("@2022 Power By codefoodteam");
         stage.centerOnScreen();
-        scene = new Scene(loadFXML("employee-functions-page"), 1280, 710);
+        scene = new Scene(loadFXML("home-page"), 1280, 710);
 
         stage.setOnHiding(et -> {
             Connection conn = null;

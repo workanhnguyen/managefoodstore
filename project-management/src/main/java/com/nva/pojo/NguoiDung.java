@@ -32,6 +32,9 @@ public class NguoiDung {
         this.vaiTro = vaiTro;
     }
 
+    public String getFullName() {
+        return this.ho + " " + this.ten;
+    }
     public String getId() {
         return id;
     }

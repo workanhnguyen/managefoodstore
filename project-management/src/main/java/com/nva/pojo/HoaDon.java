@@ -15,21 +15,23 @@ public class HoaDon {
     private Date thoiGian;
     private String maNhanVien;
     private String maBan;
-    private String maKhachHang = null;
+    private String maKhachHang = "";
     private int giamGia = 0;
+    private int thanhTien = 0;
     public HoaDon() {}
     public HoaDon(String maHoaDon, String maNhanVien, String maBan) {
         this.maHoaDon = maHoaDon;
         this.maNhanVien = maNhanVien;
         this.maBan = maBan;
     }
-    public HoaDon(String maHoaDon, Date thoiGian, String maNhanVien, String maBan, String maKhachHang, int giamGia) {
+    public HoaDon(String maHoaDon, Date thoiGian, String maNhanVien, String maBan, String maKhachHang, int giamGia, int thanhTien) {
         this.maHoaDon = maHoaDon;
         this.thoiGian = thoiGian;
         this.maNhanVien = maNhanVien;
         this.maBan = maBan;
         this.maKhachHang = maKhachHang;
         this.giamGia = giamGia;
+        this.setThanhTien(thanhTien);
     }
 
     public String getMaHoaDon() {
@@ -78,5 +80,13 @@ public class HoaDon {
 
     public void setGiamGia(int giamGia) {
         this.giamGia = giamGia;
+    }
+
+    public int getThanhTien() {
+        return thanhTien;
+    }
+
+    public void setThanhTien(int thanhTien) {
+        this.thanhTien = thanhTien;
     }
 }

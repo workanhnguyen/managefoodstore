@@ -12,7 +12,14 @@ public class KhachHang {
     private String maKhachHang;
     private String hoKhachHang;
     private String tenKhachHang;
-    private int diemThuong;
+    private int diemThuong = 0;
+    public KhachHang() {}
+    public KhachHang(String maKhachHang, String hoKhachHang, String tenKhachHang, int diemThuong) {
+        this.maKhachHang = maKhachHang;
+        this.hoKhachHang = hoKhachHang;
+        this.tenKhachHang = tenKhachHang;
+        this.diemThuong = diemThuong;
+    }
 
     public String getMaKhachHang() {
         return maKhachHang;

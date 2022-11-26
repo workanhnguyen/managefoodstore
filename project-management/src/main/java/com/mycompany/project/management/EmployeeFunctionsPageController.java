@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.nva.pojo.Ban;
 import com.nva.services.BanServices;
+import com.nva.services.NguoiDungServices;
 import com.nva.services.NhanVienServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,14 +35,13 @@ public class EmployeeFunctionsPageController implements Initializable {
     @FXML private Label hoTen;
     
     //Khai bao bien thuong
-    public static String maBan;
     BanServices b = new BanServices();
     List<Ban> banList = b.getDanhSachBan();
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         render();
-        hoTen.setText(NhanVienServices.hoTen);
+        hoTen.setText(NguoiDungServices.nguoiDung.getFullName());
     }
     @FXML
     private void switchToMainLoginPage() throws IOException {
@@ -50,9 +50,9 @@ public class EmployeeFunctionsPageController implements Initializable {
     @FXML
     private void changePage(ActionEvent event) throws IOException {
         String str = event.getTarget().toString();
-        maBan = str.substring(str.indexOf("ban", 0), str.indexOf("ban") + 5).toUpperCase();
+        BanServices.ban.setMaBan(str.substring(str.indexOf("ban", 0), str.indexOf("ban") + 5).toUpperCase());
         for (Ban ban: banList) {
-            if (ban.getMaBan().equals(maBan)) {
+            if (ban.getMaBan().equals(BanServices.ban.getMaBan())) {
                 if (!ban.isTinhTrang()) {
                     App.setRoot("handle-bill-page");
                 } else {

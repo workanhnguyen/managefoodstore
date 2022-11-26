@@ -14,10 +14,8 @@ public class NhanVien extends NguoiDung {
     private float heSoLuong;
     private int luongCoBan;
     private Date ngayVaoLam;
-
-    @Override
-    public String toString() {
-        return this.heSoLuong + "";
+    public String getFullName() {
+        return super.getHo() + " " + super.getTen();
     }
     public NhanVien() {
         super();

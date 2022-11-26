@@ -12,6 +12,7 @@ public class Ban {
     private String maBan;
     private int soLuongChoNgoi;
     private boolean tinhTrang;
+    public Ban() {}
 
     public Ban(String maBan, int soLuongChoNgoi, boolean tinhTrang) {
         this.maBan = maBan;

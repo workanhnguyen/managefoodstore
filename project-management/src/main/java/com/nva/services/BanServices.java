@@ -18,6 +18,7 @@ import java.util.List;
  * @author ASUS
  */
 public class BanServices {
+    public static Ban ban = new Ban();
     public List<Ban> getDanhSachBan() {
         List<Ban> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
@@ -33,5 +34,19 @@ public class BanServices {
             e.printStackTrace();
         }
         return danhSach;
+    }
+    public boolean capNhatTrangThai(String maBan, int tinhTrang) {
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            int rs = stm.executeUpdate(String.format("" +
+                    "UPDATE foodstoredb.ban\n" +
+                    "SET TinhTrang = %d\n" +
+                    "WHERE MaBan = '%s'", tinhTrang, maBan));
+            if (rs == 0)
+                return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }
