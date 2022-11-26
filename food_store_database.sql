@@ -36,7 +36,7 @@ CREATE TABLE `ban` (
 
 LOCK TABLES `ban` WRITE;
 /*!40000 ALTER TABLE `ban` DISABLE KEYS */;
-INSERT INTO `ban` VALUES ('BAN01',2,0),('BAN02',2,1),('BAN03',4,1),('BAN04',4,0),('BAN05',6,1),('BAN06',6,1),('BAN07',8,1),('BAN08',8,1),('BAN09',10,1),('BAN10',10,1);
+INSERT INTO `ban` VALUES ('BAN01',2,1),('BAN02',2,1),('BAN03',4,1),('BAN04',4,1),('BAN05',6,1),('BAN06',6,1),('BAN07',8,1),('BAN08',8,1),('BAN09',10,1),('BAN10',10,1);
 /*!40000 ALTER TABLE `ban` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,12 +54,11 @@ CREATE TABLE `hoadon` (
   `MaBan` char(5) NOT NULL,
   `MaKhachHang` char(10) DEFAULT NULL,
   `GiamGia` int NOT NULL DEFAULT '0',
+  `ThanhTien` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`MaHoaDon`),
   KEY `MaNV_idx` (`MaNV`),
   KEY `MaBan_idx` (`MaBan`),
-  KEY `MaKhachHang_idx` (`MaKhachHang`),
   CONSTRAINT `MaBan` FOREIGN KEY (`MaBan`) REFERENCES `ban` (`MaBan`),
-  CONSTRAINT `MaKhachHang` FOREIGN KEY (`MaKhachHang`) REFERENCES `khachhang` (`MaKhachHang`),
   CONSTRAINT `MaNV` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -70,7 +69,7 @@ CREATE TABLE `hoadon` (
 
 LOCK TABLES `hoadon` WRITE;
 /*!40000 ALTER TABLE `hoadon` DISABLE KEYS */;
-INSERT INTO `hoadon` VALUES ('HD00000001','2022-11-08 09:21:24','0878052824','BAN01','0394881245',0),('HD00000002','2022-11-08 10:10:57','0878052824','BAN02',NULL,0);
+INSERT INTO `hoadon` VALUES ('HD00000001','2022-11-26 15:54:53','0395457430','BAN03','0704770902',0,115000);
 /*!40000 ALTER TABLE `hoadon` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +86,7 @@ CREATE TABLE `hoadon_monan` (
   `SoLuong` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`MaHoaDon`,`MaMonAn`),
   KEY `MaMonAn_idx` (`MaMonAn`),
-  CONSTRAINT `MaHoaDon` FOREIGN KEY (`MaHoaDon`) REFERENCES `hoadon` (`MaHoaDon`),
+  CONSTRAINT `MaHoaDon` FOREIGN KEY (`MaHoaDon`) REFERENCES `hoadon` (`MaHoaDon`) ON DELETE CASCADE,
   CONSTRAINT `MaMA` FOREIGN KEY (`MaMonAn`) REFERENCES `monan` (`MaMonAn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -98,8 +97,60 @@ CREATE TABLE `hoadon_monan` (
 
 LOCK TABLES `hoadon_monan` WRITE;
 /*!40000 ALTER TABLE `hoadon_monan` DISABLE KEYS */;
-INSERT INTO `hoadon_monan` VALUES ('HD00000001','MA001',1),('HD00000001','MA002',1),('HD00000001','MA004',1),('HD00000002','MA001',1),('HD00000002','MA005',1);
+INSERT INTO `hoadon_monan` VALUES ('HD00000001','MA002',1),('HD00000001','MA003',1),('HD00000001','MA004',1);
 /*!40000 ALTER TABLE `hoadon_monan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hoadontamthoi`
+--
+
+DROP TABLE IF EXISTS `hoadontamthoi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `hoadontamthoi` (
+  `MaHoaDonTamThoi` char(10) NOT NULL,
+  `MaNhanVienTamThoi` char(10) NOT NULL,
+  `MaBanTamThoi` char(5) NOT NULL,
+  PRIMARY KEY (`MaHoaDonTamThoi`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hoadontamthoi`
+--
+
+LOCK TABLES `hoadontamthoi` WRITE;
+/*!40000 ALTER TABLE `hoadontamthoi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hoadontamthoi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hoadontamthoi_monan`
+--
+
+DROP TABLE IF EXISTS `hoadontamthoi_monan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `hoadontamthoi_monan` (
+  `MaHoaDonTamThoi` char(10) NOT NULL,
+  `MaMonAnTamThoi` char(5) NOT NULL,
+  `TenMonAnTamThoi` longtext NOT NULL,
+  `SoLuongTamThoi` int NOT NULL DEFAULT '0',
+  `DonGiaTamThoi` int NOT NULL DEFAULT '0',
+  `ThanhTienTamThoi` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`MaHoaDonTamThoi`,`MaMonAnTamThoi`),
+  CONSTRAINT `MaHoaDonTamThoi` FOREIGN KEY (`MaHoaDonTamThoi`) REFERENCES `hoadontamthoi` (`MaHoaDonTamThoi`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hoadontamthoi_monan`
+--
+
+LOCK TABLES `hoadontamthoi_monan` WRITE;
+/*!40000 ALTER TABLE `hoadontamthoi_monan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hoadontamthoi_monan` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -111,7 +162,7 @@ DROP TABLE IF EXISTS `khachhang`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `khachhang` (
   `MaKhachHang` char(10) NOT NULL,
-  `Ho` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Ho` varchar(20) NOT NULL,
   `Ten` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `DiemThuong` int DEFAULT '0',
   PRIMARY KEY (`MaKhachHang`)
@@ -124,7 +175,7 @@ CREATE TABLE `khachhang` (
 
 LOCK TABLES `khachhang` WRITE;
 /*!40000 ALTER TABLE `khachhang` DISABLE KEYS */;
-INSERT INTO `khachhang` VALUES ('0394881245','Lâm Hoàng','Phúc',5000),('0712346892','Nguyễn Thị Thùy','Trâm',30000),('0875641289','Dương Trọng','Thiên',9000);
+INSERT INTO `khachhang` VALUES ('0394881245','Lâm Hoàng','Phúc',12000),('0395457432','Nguyễn Vân','Anh',32000),('0704770902','Trịnh Tấn','Sĩ',25150),('0712346892','Nguyễn Thị Thùy','Trâm',9600),('0875641289','Dương Trọng','Thiên',17000),('0965484182','Phạm Thu','Thủy',20000),('0971740345','Nguyễn Trọng Huỳnh','Phát',6000);
 /*!40000 ALTER TABLE `khachhang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,8 +216,8 @@ CREATE TABLE `monan_nguyenlieu` (
   `MaNguyenLieu` char(10) NOT NULL,
   PRIMARY KEY (`MaMonAn`,`MaNguyenLieu`),
   KEY `MaNguyenLieu_idx` (`MaNguyenLieu`),
-  CONSTRAINT `MaMonAn` FOREIGN KEY (`MaMonAn`) REFERENCES `monan` (`MaMonAn`),
-  CONSTRAINT `MaNL` FOREIGN KEY (`MaNguyenLieu`) REFERENCES `nguyenlieu` (`MaNguyenLieu`)
+  CONSTRAINT `MaMonAn` FOREIGN KEY (`MaMonAn`) REFERENCES `monan` (`MaMonAn`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `MaNL` FOREIGN KEY (`MaNguyenLieu`) REFERENCES `nguyenlieu` (`MaNguyenLieu`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -206,7 +257,7 @@ CREATE TABLE `nguoidung` (
 
 LOCK TABLES `nguoidung` WRITE;
 /*!40000 ALTER TABLE `nguoidung` DISABLE KEYS */;
-INSERT INTO `nguoidung` VALUES ('0395457434','123456Anh@','Nguyễn Vân','Anh','2002-10-09','Đồng Tháp',1),('0878052824','123456Nhanvien@','Huỳnh Ngọc','Thảo','2002-01-01','TPHCM',0),('0983123789','123456Nhanvien@','Đinh Hoàng','Hiệp','2002-08-08','An Giang',0);
+INSERT INTO `nguoidung` VALUES ('0395457430','123456Nhanvien@','Nguyễn Vân','Anh','2002-10-09','Đồng Tháp',0),('0395457431','123456Admin@','Nguyễn Vân','Anh','2002-10-09','Đồng Tháp',1),('0704770900','123456Nhanvien@','Trịnh Tấn','Sĩ','2002-01-01','TP.HCM',0),('0704770901','123456Admin@','Trịnh Tấn','Sĩ','2002-01-01','TP.HCM',1),('0965484180','123456Nhanvien@','Phạm Thu','Thủy','2002-01-01','TP.HCM',0),('0965484181','123456Admin@','Phạm Thu','Thủy','2002-01-01','TP.HCM',1);
 /*!40000 ALTER TABLE `nguoidung` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +283,7 @@ CREATE TABLE `nguyenlieu` (
 
 LOCK TABLES `nguyenlieu` WRITE;
 /*!40000 ALTER TABLE `nguyenlieu` DISABLE KEYS */;
-INSERT INTO `nguyenlieu` VALUES ('NL00000001','Gạo',50,'Kg'),('NL00000002','Tôm',20,'Kg'),('NL00000003','Mực',8,'Kg'),('NL00000004','Đậu que',12,'Kg'),('NL00000005','Mì sợi',100,'Gói'),('NL00000006','Bắp cải tím',3,'Kg'),('NL00000007','Bí đỏ',6,'Kg'),('NL00000008','Rong biển',1,'Gói'),('NL00000009','Dưa leo',9,'Kg'),('NL00000010','Chả cá viên',6,'Gói'),('NL00000011','Xúc xích',10,'Gói'),('NL00000012','Đậu Hà Lan',8,'Gói'),('NL00000013','Kim chi',11,'Gói'),('NL00000014','Thịt băm',4,'Kg');
+INSERT INTO `nguyenlieu` VALUES ('NL00000001','Gạo',65,'Kg'),('NL00000002','Tôm',8,'Kg'),('NL00000003','Mực',35,'Kg'),('NL00000004','Đậu que',52,'Kg'),('NL00000005','Mì sợi',7,'Gói'),('NL00000006','Bắp cải tím',56,'Kg'),('NL00000007','Bí đỏ',8,'Kg'),('NL00000008','Rong biển',86,'Gói'),('NL00000009','Dưa leo',8,'Kg'),('NL00000010','Chả cá viên',100,'Gói'),('NL00000011','Xúc xích',65,'Gói'),('NL00000012','Đậu Hà Lan',79,'Gói'),('NL00000013','Kim chi',56,'Gói'),('NL00000014','Thịt băm',80,'Kg');
 /*!40000 ALTER TABLE `nguyenlieu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +301,7 @@ CREATE TABLE `nhanvien` (
   `NgayVaoLam` date NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Id_UNIQUE` (`Id`),
-  CONSTRAINT `IdNhanVien` FOREIGN KEY (`Id`) REFERENCES `nguoidung` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `IdNhanVien` FOREIGN KEY (`Id`) REFERENCES `nguoidung` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -260,7 +311,7 @@ CREATE TABLE `nhanvien` (
 
 LOCK TABLES `nhanvien` WRITE;
 /*!40000 ALTER TABLE `nhanvien` DISABLE KEYS */;
-INSERT INTO `nhanvien` VALUES ('0878052824',1,4000000,'2022-11-08'),('0983123789',1.5,4500000,'2022-10-09');
+INSERT INTO `nhanvien` VALUES ('0395457430',2,4000000,'2021-01-01'),('0704770900',2,4000000,'2021-03-01'),('0965484180',2,4000000,'2021-04-02');
 /*!40000 ALTER TABLE `nhanvien` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,6 +328,7 @@ CREATE TABLE `phieumuahang` (
   `DonGiaMatHang` int NOT NULL,
   `MaNguyenLieu` char(10) NOT NULL,
   `NgayNhapPhieu` datetime NOT NULL,
+  `ThanhTien` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`MaPhieuMuaHang`),
   KEY `MaNguyenLieu_idx` (`MaNguyenLieu`),
   CONSTRAINT `MaNguyenLieu` FOREIGN KEY (`MaNguyenLieu`) REFERENCES `nguyenlieu` (`MaNguyenLieu`)
@@ -289,7 +341,7 @@ CREATE TABLE `phieumuahang` (
 
 LOCK TABLES `phieumuahang` WRITE;
 /*!40000 ALTER TABLE `phieumuahang` DISABLE KEYS */;
-INSERT INTO `phieumuahang` VALUES ('MH00000001',20,6000,'NL00000005','2022-11-08 00:00:00'),('MH00000002',30,18000,'NL00000001','2022-11-08 00:00:00'),('MH00000003',15,120000,'NL00000002','2022-11-08 00:00:00');
+INSERT INTO `phieumuahang` VALUES ('MH00000001',20,6000,'NL00000005','2022-11-08 12:12:31',50000),('MH00000002',30,18000,'NL00000001','2022-11-08 12:34:21',30000),('MH00000003',15,120000,'NL00000002','2022-11-08 12:36:56',100000);
 /*!40000 ALTER TABLE `phieumuahang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -304,7 +356,7 @@ CREATE TABLE `quantrivien` (
   `Id` char(10) NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Id_UNIQUE` (`Id`),
-  CONSTRAINT `IdQuanTriVien` FOREIGN KEY (`Id`) REFERENCES `nguoidung` (`Id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `IdQuanTriVien` FOREIGN KEY (`Id`) REFERENCES `nguoidung` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -314,7 +366,7 @@ CREATE TABLE `quantrivien` (
 
 LOCK TABLES `quantrivien` WRITE;
 /*!40000 ALTER TABLE `quantrivien` DISABLE KEYS */;
-INSERT INTO `quantrivien` VALUES ('0395457434');
+INSERT INTO `quantrivien` VALUES ('0395457431'),('0704770901'),('0965484181');
 /*!40000 ALTER TABLE `quantrivien` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,4 +403,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-19 19:05:03
+-- Dump completed on 2022-11-26 16:02:43

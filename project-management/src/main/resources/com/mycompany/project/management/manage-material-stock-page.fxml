@@ -29,10 +29,10 @@
       </Label>
       <TableView layoutX="28.0" layoutY="233.0" prefHeight="399.0" prefWidth="1227.0">
         <columns>
-          <TableColumn prefWidth="213.06669235229492" text="ID" />
+          <TableColumn prefWidth="213.06669235229492" text="Mã nguyên liệu" />
           <TableColumn minWidth="0.0" prefWidth="432.5332794189453" text="Tên nguyên liệu" />
             <TableColumn minWidth="0.0" prefWidth="225.86669921875" text="Còn lại" />
-            <TableColumn minWidth="0.0" prefWidth="355.73333740234375" text="Tình trạng" />
+            <TableColumn minWidth="0.0" prefWidth="355.73333740234375" text="Đơn vị" />
         </columns>
       </TableView>
       <Button layoutX="24.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
