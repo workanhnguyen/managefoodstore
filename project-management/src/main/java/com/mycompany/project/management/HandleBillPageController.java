@@ -128,8 +128,6 @@ public class HandleBillPageController implements Initializable {
         if (option.get() == ButtonType.OK) {
             HoaDon hd = new HoaDon();
 
-            tempBill.setMaHoaDon(h.getMaHoaDonLonNhat());
-
             hd.setMaHoaDon(tempBill.getMaHoaDon());
             hd.setThoiGian(CauHinh.date);
             hd.setMaNhanVien(tempBill.getMaNhanVien());
@@ -164,9 +162,7 @@ public class HandleBillPageController implements Initializable {
                     if (tempH.deleteHoaDonTamThoi(tempBill.getMaHoaDon())) {
                         //Cập nhật lại trạng thái của bàn
                         b.capNhatTrangThai(tempBill.getMaBan(), 1);
-                        // Xóa hóa đơn tạm thời
-                        tempH.deleteHoaDonTamThoi(tempBill.getMaHoaDon());
-                        Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thành công!", Alert.AlertType.INFORMATION);
+                        Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thành công!" + tempBill.getMaHoaDon(), Alert.AlertType.INFORMATION);
                         App.setRoot("employee-functions-page");
                     } else {
                         Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thất bại! (ErrorCode: 001)", Alert.AlertType.ERROR);
@@ -177,7 +173,6 @@ public class HandleBillPageController implements Initializable {
             } else {
                 Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thất bại! (ErrorCode: 003)", Alert.AlertType.ERROR);
             }
-            tempBill = null;
         }
     }
     @FXML
@@ -188,13 +183,19 @@ public class HandleBillPageController implements Initializable {
     private void switchToEmployeeFunctionsPage() throws IOException {
         App.setRoot("employee-functions-page");
     }
-    private void render() {
+    private void takeTempBill() {
         tempBill = new HoaDonTamThoi();
         tempBill = tempH.getHoaDonTamThoi(BanServices.ban.getMaBan());
 
-        if (tempBill.getMaHoaDon() != null) {
+        if (tempBill != null) {
             tempBill.setListOrderedDish(tempH_M.getDanhSachMonAnTamThoi(tempBill.getMaHoaDon()));
+        } else {
+            Utility.showAlertDialog("Thông báo", BanServices.ban.getMaBan() + "-" +
+                    tempH.getHoaDonTamThoi(BanServices.ban.getMaBan()), Alert.AlertType.ERROR);
         }
+    }
+    private void render() {
+        takeTempBill();
         //Thực hiện render giao diện ở đây
         lbMaHoaDon.setText(tempBill.getMaHoaDon());
         lbTenNhanVien.setText(n.getFullName(tempBill.getMaNhanVien()));

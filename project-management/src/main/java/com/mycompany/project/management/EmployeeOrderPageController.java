@@ -117,7 +117,7 @@ public class EmployeeOrderPageController implements Initializable {
             Utility.showAlertDialog("Thông báo", "Vui lòng chọn ít nhất một món!", Alert.AlertType.WARNING);
         } else {
             HoaDonTamThoi tempBill = new HoaDonTamThoi();
-            tempBill.setMaHoaDon(h.getMaHoaDonLonNhat());
+            tempBill.setMaHoaDon(tempHd.getMaHoaDonTamThoiLonNhat());
             tempBill.setMaBan(BanServices.ban.getMaBan());
             tempBill.setMaNhanVien(NguoiDungServices.nguoiDung.getId());
             tempBill.setListOrderedDish(numList);
