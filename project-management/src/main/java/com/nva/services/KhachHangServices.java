@@ -54,6 +54,8 @@ public class KhachHangServices {
     public boolean addKhachHangMoi(KhachHang kh) {
         if (kiemTraKhachHangTonTai(kh.getMaKhachHang()))
             return false;
+        else if (kh.getDiemThuong() != 0) return false;
+        else if (this.kiemTraDuLieuHopLe(kh) != 1) return false;
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
@@ -72,6 +74,7 @@ public class KhachHangServices {
     public boolean capNhatDiemThuong(String maKhachHang, int diemThuong) {
         if (!kiemTraKhachHangTonTai(maKhachHang))
             return false;
+        else if (diemThuong < 0) return false;
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
@@ -110,8 +113,8 @@ public class KhachHangServices {
         if (checkMaKhachHang != 1) return checkMaKhachHang;
         else if (kh.getHoKhachHang().isEmpty() || kh.getHoKhachHang().isBlank()) return 0;
         else if (kh.getTenKhachHang().isEmpty() || kh.getTenKhachHang().isBlank()) return 0;
-        else if (kh.getHoKhachHang().length() > 20) return -4;
-        else if (kh.getTenKhachHang().length() > 30) return -4;
+        else if (kh.getHoKhachHang().length() > 40) return -4;
+        else if (kh.getTenKhachHang().length() > 15) return -4;
         else return 1;
     }
 }

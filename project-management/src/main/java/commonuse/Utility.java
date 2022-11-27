@@ -14,7 +14,7 @@ public class Utility {
      * 0: chuỗi rỗng
      * -1: chuỗi chứa kí tự chữ hoặc kí tự đặc biệt
      * -2: chuỗi không bắt đầu bằng số 0
-     * -3: chuỗi không đủ 10 kí tự
+     * -3: chuỗi không đủ hoặc vượt quá 10 kí tự
      */
     public static int kiemTraSoDienThoaiHopLe(String inputStr) {
         Pattern p = Pattern.compile("\\d*");
