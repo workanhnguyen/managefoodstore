@@ -55,7 +55,7 @@ public class HoaDonTamThoiServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO foodstoredb.hoadontamthoi(MaHoaDonTamThoi, MaNhanVienTamThoi, MaBanTamThoi)\n" +
+                    "INSERT INTO hoadontamthoi(MaHoaDonTamThoi, MaNhanVienTamThoi, MaBanTamThoi)\n" +
                     "VALUES('%s', '%s', '%s')", hoaDonTamThoi.getMaHoaDon(), hoaDonTamThoi.getMaNhanVien(), hoaDonTamThoi.getMaBan()));
             if (rs == 0) return false;
         } catch (SQLException e) {

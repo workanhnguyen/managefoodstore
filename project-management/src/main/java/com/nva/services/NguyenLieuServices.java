@@ -35,7 +35,7 @@ public class NguyenLieuServices {
             for (String maNguyenLieu: danhSachMaNguyenLieu) {
                 ResultSet rs = stm.executeQuery(String.format(
                         "SELECT SoLuong\n" +
-                                "FROM foodstoredb.nguyenlieu\n" +
+                                "FROM nguyenlieu\n" +
                                 "WHERE MaNguyenLieu = '%s'", maNguyenLieu));
                 if (rs.next()) {
                     if (rs.getInt("SoLuong") <= 0) return false;
@@ -51,7 +51,7 @@ public class NguyenLieuServices {
             Statement stm = conn.createStatement();
             for (String maNguyenLieu: danhSachMaNguyenLieu) {
                 int rs = stm.executeUpdate(String.format("" +
-                        "UPDATE foodstoredb.nguyenlieu\n" +
+                        "UPDATE nguyenlieu\n" +
                         "SET SoLuong = SoLuong - 1\n" +
                         "WHERE MaNguyenLieu = '%s' AND SoLuong >= 1", maNguyenLieu));
                 if (rs == 0)
@@ -68,7 +68,7 @@ public class NguyenLieuServices {
             Statement stm = conn.createStatement();
             for (String maNguyenLieu: danhSachMaNguyenLieu) {
                 int rs = stm.executeUpdate(String.format("" +
-                        "UPDATE foodstoredb.nguyenlieu\n" +
+                        "UPDATE nguyenlieu\n" +
                         "SET SoLuong = SoLuong + 1\n" +
                         "WHERE MaNguyenLieu = '%s'", maNguyenLieu));
                 if (rs == 0)

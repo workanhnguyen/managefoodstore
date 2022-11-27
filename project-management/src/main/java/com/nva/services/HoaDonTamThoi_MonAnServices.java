@@ -60,7 +60,7 @@ public class HoaDonTamThoi_MonAnServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT MaMonAnTamThoi, TenMonAnTamThoi, SoLuongTamThoi, DonGiaTamThoi, ThanhTienTamThoi\n" +
-                    "FROM foodstoredb.hoadontamthoi_monan\n" +
+                    "FROM hoadontamthoi_monan\n" +
                     "WHERE MaHoaDonTamThoi = '%s'", maHoaDonTamThoi));
             while (rs.next()) {
                 NumOfDish n = new NumOfDish(
@@ -81,7 +81,7 @@ public class HoaDonTamThoi_MonAnServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO foodstoredb.hoadontamthoi_monan(MaHoaDonTamThoi, MaMonAnTamThoi, TenMonAnTamThoi, SoLuongTamThoi, DonGiaTamThoi, ThanhTienTamThoi)\n" +
+                    "INSERT INTO hoadontamthoi_monan(MaHoaDonTamThoi, MaMonAnTamThoi, TenMonAnTamThoi, SoLuongTamThoi, DonGiaTamThoi, ThanhTienTamThoi)\n" +
                     "VALUES('%s', '%s', '%s', %d, %d, %d)",
                         tempHd_Ma.getMaHoaDonTamThoi(),
                         tempHd_Ma.getMaMonAnTamThoi(),

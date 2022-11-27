@@ -39,7 +39,7 @@ public class BanServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "UPDATE foodstoredb.ban\n" +
+                    "UPDATE ban\n" +
                     "SET TinhTrang = %d\n" +
                     "WHERE MaBan = '%s'", tinhTrang, maBan));
             if (rs == 0)

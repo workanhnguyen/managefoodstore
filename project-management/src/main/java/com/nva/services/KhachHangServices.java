@@ -17,7 +17,7 @@ public class KhachHangServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
-                    "SELECT * FROM foodstoredb.khachhang"));
+                    "SELECT * FROM khachhang"));
             while (rs.next()) {
                 KhachHang kh = new KhachHang(
                         rs.getString("MaKhachHang"),
@@ -36,7 +36,7 @@ public class KhachHangServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT * \n" +
-                    "FROM foodstoredb.khachhang\n" +
+                    "FROM khachhang\n" +
                     "WHERE MaKhachHang = '%s'", maKhachHang));
             if (rs.next()) {
                 KhachHang kh = new KhachHang(
@@ -57,7 +57,7 @@ public class KhachHangServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO foodstoredb.khachhang(MaKhachHang, Ho, Ten, DiemThuong)\n" +
+                    "INSERT INTO khachhang(MaKhachHang, Ho, Ten, DiemThuong)\n" +
                     "VALUES('%s', '%s', '%s', %d)\n",
                     kh.getMaKhachHang(),
                     kh.getHoKhachHang(),
@@ -75,7 +75,7 @@ public class KhachHangServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "UPDATE foodstoredb.khachhang \n" +
+                    "UPDATE khachhang \n" +
                     "SET DiemThuong = %d\n" +
                     "WHERE MaKhachHang = '%s'", diemThuong, maKhachHang));
             if (rs == 0) return false;
@@ -89,7 +89,7 @@ public class KhachHangServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT * \n" +
-                    "FROM foodstoredb.khachhang\n" +
+                    "FROM khachhang\n" +
                     "WHERE MaKhachHang = '%s'", maKhachHang));
             if (rs.next()) return true;
         } catch (SQLException e) {

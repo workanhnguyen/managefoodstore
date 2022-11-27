@@ -17,7 +17,7 @@ public class HoaDon_MonAnServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT *\n" +
-                    "FROM foodstoredb.hoadon_monan\n"));
+                    "FROM hoadon_monan\n"));
             while (rs.next()) {
                 HoaDon_MonAn hd_ma = new HoaDon_MonAn(rs.getString("MaHoaDon"),
                         rs.getString("MaHoaDon"),
@@ -34,7 +34,7 @@ public class HoaDon_MonAnServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT MaHoaDon, MaMonAn\n" +
-                    "FROM foodstoredb.hoadon_monan\n" +
+                    "FROM hoadon_monan\n" +
                     "WHERE MaHoaDon = '%s' AND MaMonAn = '%s'", maHoaDon, maMonAn));
             if (rs.next()) {
                 if (rs.getString(1).equals(maHoaDon) && rs.getString(2).equals(maMonAn)) {
@@ -52,7 +52,7 @@ public class HoaDon_MonAnServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO foodstoredb.hoadon_monan(MaHoaDon, MaMonAn, SoLuong)\n" +
+                    "INSERT INTO hoadon_monan(MaHoaDon, MaMonAn, SoLuong)\n" +
                     "VALUES('%s', '%s', %d)\n", hd_ma.getMaHoaDon(), hd_ma.getMaMonAn(), hd_ma.getSoLuong()));
             if (rs == 0) return false;
         } catch (SQLException e) {

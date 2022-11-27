@@ -24,7 +24,7 @@ public class NhanVienServices {
         List<NhanVien> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM NhanVien");
+            ResultSet rs = stm.executeQuery("SELECT * FROM nhanvien");
 
             while (rs.next()) {
                 NhanVien nv = new NhanVien(rs.getString("Id"), rs.getFloat("HeSoLuong"),

@@ -40,7 +40,7 @@ public class NguoiDungServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(String.format("" +
                     "SELECT Ho, Ten\n" +
-                    "FROM foodstoredb.nguoidung\n" +
+                    "FROM nguoidung\n" +
                     "WHERE Id = '%s'", id));
 
             if (rs.next()) {

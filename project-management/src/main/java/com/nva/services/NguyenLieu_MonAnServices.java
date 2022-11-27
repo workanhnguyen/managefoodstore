@@ -33,7 +33,7 @@ public class NguyenLieu_MonAnServices {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(
                     String.format("SELECT MaNguyenLieu\n" +
-                                  "FROM foodstoredb.monan_nguyenlieu\n" +
+                                  "FROM monan_nguyenlieu\n" +
                                   "WHERE MaMonAn = '%s'", maMonAn));
 
             while (rs.next()) {

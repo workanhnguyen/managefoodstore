@@ -17,7 +17,7 @@ public class HoaDonServices {
         List<HoaDon> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM foodstoredb.hoadon");
+            ResultSet rs = stm.executeQuery("SELECT * FROM hoadon");
 
             while (rs.next()) {
                 HoaDon hd = new HoaDon(rs.getString("MaHoaDon"), rs.getDate("ThoiGian"),
@@ -34,7 +34,7 @@ public class HoaDonServices {
         String newCode = "";
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT max(MaHoaDon) FROM foodstoredb.hoadon");
+            ResultSet rs = stm.executeQuery("SELECT max(MaHoaDon) FROM hoadon");
             if (rs.next()) {
                 if (rs.getString(1) != null) {
                     int maxCode = Integer.parseInt(rs.getString(1)
@@ -51,7 +51,7 @@ public class HoaDonServices {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO foodstoredb.hoadon(MaHoaDon, ThoiGian, MaNV, MaBan, MaKhachHang, GiamGia, ThanhTien)\n" +
+                    "INSERT INTO hoadon(MaHoaDon, ThoiGian, MaNV, MaBan, MaKhachHang, GiamGia, ThanhTien)\n" +
                     "VALUES('%s', '%d-%d-%d %d:%d:%d', '%s', '%s', '%s', %d, %d)",
                     hoaDon.getMaHoaDon(),
                     hoaDon.getThoiGian().getYear() + 1900,
