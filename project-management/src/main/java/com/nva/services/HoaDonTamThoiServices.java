@@ -1,6 +1,5 @@
 package com.nva.services;
 
-import com.nva.pojo.Ban;
 import com.nva.pojo.HoaDonTamThoi;
 import commonuse.JdbcUtils;
 

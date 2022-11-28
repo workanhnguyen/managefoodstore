@@ -17,6 +17,6 @@ public class UnitTest_Utility {
     @ParameterizedTest
     @CsvFileSource(resources = "/data_sodienthoai.csv", numLinesToSkip = 1)
     public void testSoDienThoai(String input, int expectedOutput) {
-        Assertions.assertEquals(Utility.kiemTraSoDienThoaiHopLe(input), expectedOutput);
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraSoDienThoaiHopLe(input));
     }
 }

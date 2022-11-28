@@ -1,7 +1,6 @@
 package com.nva.services;
 
 import com.nva.pojo.NguoiDung;
-import com.nva.pojo.NhanVien;
 import commonuse.JdbcUtils;
 
 import java.sql.Connection;

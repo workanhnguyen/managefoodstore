@@ -1,6 +1,5 @@
 package com.nva.services;
 
-import com.nva.pojo.HoaDonTamThoi;
 import com.nva.pojo.HoaDonTamThoi_MonAn;
 import com.nva.subclass.NumOfDish;
 import commonuse.JdbcUtils;

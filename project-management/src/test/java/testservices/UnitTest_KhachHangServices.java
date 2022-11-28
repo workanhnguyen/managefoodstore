@@ -7,6 +7,7 @@ package testservices;
 import com.nva.pojo.KhachHang;
 import com.nva.services.KhachHangServices;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -25,17 +26,17 @@ public class UnitTest_KhachHangServices {
         kh.setHoKhachHang(ho);
         kh.setTenKhachHang(ten);
 
-        Assertions.assertEquals(kh_S.kiemTraDuLieuHopLe(kh), expectOutput);
+        Assertions.assertEquals(expectOutput, kh_S.kiemTraDuLieuHopLe(kh));
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/data2_khachhang.csv", numLinesToSkip = 1)
     public void testKiemTraKhachHangTonTai(String soDienThoai, boolean expectOutput) {
-        Assertions.assertEquals(kh_S.kiemTraKhachHangTonTai(soDienThoai), expectOutput);
+        Assertions.assertEquals(expectOutput, kh_S.kiemTraKhachHangTonTai(soDienThoai));
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/data3_khachhang.csv", numLinesToSkip = 1)
     public void testCapNhatDiemThuong(String soDienThoai, int diemThuong, boolean expectOutput) {
-        Assertions.assertEquals(kh_S.capNhatDiemThuong(soDienThoai, diemThuong), expectOutput);
+        Assertions.assertEquals(expectOutput, kh_S.capNhatDiemThuong(soDienThoai, diemThuong));
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/data4_khachhang.csv", numLinesToSkip = 1)
@@ -46,6 +47,13 @@ public class UnitTest_KhachHangServices {
         kh.setTenKhachHang(ten);
         kh.setDiemThuong(diemThuong);
 
-        Assertions.assertEquals(kh_S.addKhachHangMoi(kh), expectOutput);
+        Assertions.assertEquals(expectOutput, kh_S.addKhachHangMoi(kh));
+    }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data5_khachhang.csv", numLinesToSkip = 1)
+    public void testGetKhachHang(String soDienThoai, String tenKhachHang) {
+        KhachHang kh = new KhachHang();
+        kh = kh_S.getKhachHang(soDienThoai);
+        Assertions.assertEquals(tenKhachHang, kh.getHoKhachHang() + " " + kh.getTenKhachHang());
     }
 }
