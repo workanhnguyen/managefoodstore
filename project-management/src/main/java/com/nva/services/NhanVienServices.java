@@ -31,9 +31,35 @@ public class NhanVienServices {
                         rs.getInt("LuongCoBan"), rs.getDate("NgayVaoLam"));
                 danhSach.add(nv);
             }
+
+            for (NhanVien nv: danhSach) {
+                rs = stm.executeQuery(String.format("SELECT * FROM nguoidung WHERE Id = '%s'", nv.getMaNhanVien()));
+                if (rs.next()) {
+                    nv.setMatKhau(rs.getString("MatKhau"));
+                    nv.setHoNhanVien(rs.getString("Ho"));
+                    nv.setTenNhanVien(rs.getString("Ten"));
+                    nv.setNgaySinh(rs.getDate("NgaySinh"));
+                    nv.setDiaChi(rs.getString("DiaChi"));
+                    nv.setVaiTro(rs.getBoolean("VaiTro"));
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return danhSach;
+    }
+    public boolean kiemTraNhanVienTonTai(String soDienThoai) {
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(String.format("SELECT Id FROM nhanvien WHERE Id = '%s'", soDienThoai));
+
+            if (rs.next()) {
+                if (rs.getString("Id").equals(soDienThoai))
+                    return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

@@ -37,7 +37,7 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <Label fx:id="alertInfo" layoutX="463.0" layoutY="436.0" prefHeight="17.0" prefWidth="337.0" text="* Dòng thông báo nếu xuất hiện lỗi" textFill="#d41313" />
+      <Label fx:id="alertInfo" layoutX="463.0" layoutY="436.0" prefHeight="17.0" prefWidth="337.0" textFill="#d41313" />
       <Button layoutX="465.0" layoutY="490.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="334.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG NHẬP">
          <font>
             <Font name="System Bold" size="24.0" />

@@ -2,13 +2,10 @@ package com.mycompany.project.management;
 
 import commonuse.JdbcUtils;
 import javafx.application.Application;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -25,7 +22,7 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setTitle("@2022 Power By codefoodteam");
         stage.centerOnScreen();
-        scene = new Scene(loadFXML("home-page"), 1280, 710);
+        scene = new Scene(loadFXML("register-new-employee-page"), 1280, 710);
 
         stage.setOnHiding(et -> {
             Connection conn = null;

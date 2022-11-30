@@ -1,0 +1,54 @@
+Mật Khẩu, Kết quả
+123456Admin@, 1
+123456Admin*, 1
+123456Admin#, 1
+123456Admin$, 1
+123456Admin%, 1
+123456Admin!, 1
+123456Admin&, 1
+123456Admin:, 1
+"123456Admin,", 1
+123456Admin., 1
+123456Admin=, 1
+123456Admin+, 1
+123456Admin-, 1
+123456Admin_, 1
+123456Admin~, 1
+123456Admin`, 1
+123456Admin^, 1
+123456Admin/, 1
+123456Admin;, 1
+123456Admin', 1
+123456Admin\, 1
+123456Admin", 1
+123456Admin|, 1
+123456Admin(, 1
+123456Admin), 1
+123456Admin[, 1
+123456Admin], 1
+123456Admin{, 1
+123456Admin}, 1
+123456Admin?, 1
+123456Admin>, 1
+123456Admin<, 1
+"", 0
+" ", 0
+123456Ad min@, -1
+" 123456Admin@", -1
+"123456Admin@ ", -1
+1Admin@, -3
+12345678901234567Admin@, -3
+123456789, -2
+abcdefghijkmn, -2
+@#%$*&^%$#@$%, -2
+ABCHKSJDKAK, -2
+abcdeABCDE, -2
+abcdef1234, -2
+ABCDEF12345, -2
+abcde@#$%^&, -2
+ABCDEF@#$%^&, -2
+abcABC@#$, -2
+1234567@$#%^, -2
+abc123ABC, -2
+abc123@#$, -2
+ABC123@#$, -2
