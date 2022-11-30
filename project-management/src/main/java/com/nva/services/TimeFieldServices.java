@@ -34,6 +34,7 @@ public class TimeFieldServices {
         }
         return danhSach;
     }
+//Thongke doanh thu tuy chinh
 //    public List<TimeField> thongKeDoanhThuTuyChinh(){
 //        List<TimeField> danhSach= new ArrayList<>();
 //        try(Connection conn= JdbcUtils.getConn()){
