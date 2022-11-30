@@ -34,4 +34,19 @@ public class TimeFieldServices {
         }
         return danhSach;
     }
+//    public List<TimeField> thongKeDoanhThuTuyChinh(){
+//        List<TimeField> danhSach= new ArrayList<>();
+//        try(Connection conn= JdbcUtils.getConn()){
+//            Statement stm= conn.createStatement();
+//            ResultSet rs= stm.executeQuery("SELECT ThoiGian FROM HoaDon")
+//               while (rs.next()) {
+//                
+//                danhSach.add(tf);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return danhSach;
+//        }
+//    }
 }
