@@ -21,6 +21,10 @@ public class KhachHang {
         this.diemThuong = diemThuong;
     }
 
+    KhachHang(String string, String string0, String string1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public String getMaKhachHang() {
         return maKhachHang;
     }
