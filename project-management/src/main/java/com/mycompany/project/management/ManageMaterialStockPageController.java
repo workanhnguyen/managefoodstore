@@ -51,7 +51,6 @@ public class ManageMaterialStockPageController implements Initializable{
     NguyenLieuServices nl = new NguyenLieuServices ();
     
     List<NguyenLieu> showNguyenLieu = nl.getDanhSachNguyenLieu();
-    
   
 
     @Override
@@ -62,4 +61,4 @@ public class ManageMaterialStockPageController implements Initializable{
        donViColumn.setCellValueFactory(new PropertyValueFactory<NguyenLieu, String>("donVi"));
        tableNL.setItems(FXCollections.observableArrayList(showNguyenLieu));
     }     
-}
+}//
