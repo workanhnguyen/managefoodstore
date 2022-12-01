@@ -4,8 +4,7 @@
  */
 package com.nva.pojo;
 
-import java.text.SimpleDateFormat;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -13,17 +12,20 @@ import java.sql.Date;
  */
 public class PhieuMuaHang {
     private String maPhieuMuaHang;
-    private int soLuongMatHang;
-    private int donGiaMatHang;
+    private int soLuongMatHang = 0;
+    private int donGiaMatHang = 0;
     private String maNguyenLieu;
     private Date ngayNhapPhieu;
+    private int thanhTien;
+    public PhieuMuaHang() {}
 
-    public PhieuMuaHang(String maPhieuMuaHang,int soLuongMatHang, int donGiaMatHang,String maNguyenLieu, Date ngayNhapPhieu ){
+    public PhieuMuaHang(String maPhieuMuaHang, int soLuongMatHang, int donGiaMatHang, String maNguyenLieu, Date ngayNhapPhieu, int thanhTien){
         this.maPhieuMuaHang = maPhieuMuaHang;
         this.soLuongMatHang = soLuongMatHang;
         this.donGiaMatHang = donGiaMatHang;
         this.maNguyenLieu = maNguyenLieu;
-        this.ngayNhapPhieu = this.ngayNhapPhieu;
+        this.ngayNhapPhieu = ngayNhapPhieu;
+        this.thanhTien = thanhTien;
     }
     public String getMaPhieuMuaHang() {
         return maPhieuMuaHang;
@@ -64,5 +66,9 @@ public class PhieuMuaHang {
 
     public void setNgayNhapPhieu(Date ngayNhapPhieu) {
         this.ngayNhapPhieu = ngayNhapPhieu;
+    }
+
+    public int getThanhTien() {
+        return thanhTien;
     }
 }

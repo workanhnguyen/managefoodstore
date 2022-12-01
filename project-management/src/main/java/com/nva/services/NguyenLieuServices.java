@@ -86,7 +86,7 @@ public class NguyenLieuServices {
         List<NguyenLieu> danhSach = new ArrayList<>();
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM nguyenlieu WHERE Soluong <10");
+            ResultSet rs = stm.executeQuery("SELECT * FROM nguyenlieu WHERE Soluong <= 10");
 
             while (rs.next()) {
                 NguyenLieu nl = new NguyenLieu(rs.getString("MaNguyenLieu"),
@@ -100,38 +100,17 @@ public class NguyenLieuServices {
         }
         return danhSach;
     }
-     public boolean setDuLieuPhieuMuaHang1(PhieuMuaHang pmh) {
-//        if (!kiemTraDuLieuHopLe(hd_ma.getMaHoaDon(), hd_ma.getMaMonAn()))
-//            return false;
+    public boolean capNhatSoLuongNguyenLieu(String maNguyenLieu, int soLuongCongThem) {
         try (Connection conn = JdbcUtils.getConn()) {
             Statement stm = conn.createStatement();
             int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO phieumuahang(MaPhieuMuaHang, SoLuongMatHang, DonGiaMatHang, MaNguyenLieu, NgayNhapLieu)\n" +
-                    "VALUES('%s', '%d', %f, %s, %s)\n", pmh.getMaPhieuMuaHang(), pmh.getSoLuongMatHang(), pmh.getDonGiaMatHang(),pmh.getMaNguyenLieu(),pmh.getNgayNhapPhieu()));
-            if (rs == 0) return false;
-        } catch (SQLException e) {
-            e.printStackTrace();
+                    "UPDATE nguyenlieu\n" +
+                    "SET SoLuong = SoLuong + %d\n" +
+                    "WHERE MaNguyenLieu = '%s'", soLuongCongThem, maNguyenLieu));
+            if (rs == 0)
+                return false;
         }
-        return true;
-    }
-    public boolean setPhieuNhapHang(PhieuMuaHang pmh) {
-        try (Connection conn = JdbcUtils.getConn()) {
-            Statement stm = conn.createStatement();
-            int rs = stm.executeUpdate(String.format("" +
-                    "INSERT INTO hoadon(MaPhieuMuaHang, SoLuongMatHang, DonGiaMatHang, MaNguyenLieu, NgayNhapPhieu)\n" +
-                    "VALUES('%s','%d','%d','%s' '%d-%d-%d %d:%d:%d')",
-                    pmh.getMaPhieuMuaHang(),
-                    pmh.getSoLuongMatHang(),
-                    pmh.getDonGiaMatHang(),
-                     pmh.getMaNguyenLieu(),
-                    pmh.getNgayNhapPhieu().getYear() + 1900,
-                    pmh.getNgayNhapPhieu().getMonth() + 1,
-                    pmh.getNgayNhapPhieu().getDate(),
-                    pmh.getNgayNhapPhieu().getHours(),
-                    pmh.getNgayNhapPhieu().getMinutes(),
-                    pmh.getNgayNhapPhieu().getSeconds()));
-            if (rs == 0) return false;
-        } catch (SQLException e) {
+        catch (SQLException e) {
             e.printStackTrace();
         }
         return true;

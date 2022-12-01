@@ -11,4 +11,7 @@ module com.mycompany.project.management {
 
     exports com.nva.subclass;
     opens com.nva.subclass to javafx.fxml;
+
+    exports com.nva.services;
+    opens com.nva.services to javafx.fxml;
 }

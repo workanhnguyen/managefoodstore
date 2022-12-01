@@ -28,7 +28,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="lbHoTen" layoutX="879.0" layoutY="74.0" prefHeight="35.0" prefWidth="261.0" text="Họ và tên quản trị viên ">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="672.0" layoutY="74.0" prefHeight="35.0" prefWidth="468.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -110,13 +110,13 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <DatePicker layoutX="909.0" layoutY="282.0" prefHeight="40.0" prefWidth="281.0" promptText="MM/dd/yyyy" />
+      <DatePicker fx:id="dpNgaySinh" editable="false" layoutX="909.0" layoutY="282.0" prefHeight="40.0" prefWidth="281.0" />
       <Label layoutX="721.0" layoutY="343.0" prefHeight="35.0" prefWidth="138.0" text="Địa chỉ:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="339.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập địa chỉ...">
+      <TextField fx:id="tfDiaChi" layoutX="910.0" layoutY="339.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập địa chỉ...">
          <font>
             <Font size="18.0" />
          </font>
@@ -126,8 +126,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker layoutX="910.0" layoutY="397.0" prefHeight="40.0" prefWidth="281.0" promptText="MM/dd/yyyy" />
-      <TextField layoutX="910.0" layoutY="454.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập mức lương...">
+      <DatePicker fx:id="dpNgayVaoLam" editable="false" layoutX="910.0" layoutY="397.0" prefHeight="40.0" prefWidth="281.0" />
+      <TextField fx:id="tfLuongCoBan" layoutX="910.0" layoutY="454.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập mức lương...">
          <font>
             <Font size="18.0" />
          </font>
@@ -137,7 +137,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="512.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập hệ số lương...">
+      <TextField fx:id="tfHeSoLuong" layoutX="910.0" layoutY="512.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập hệ số lương...">
          <font>
             <Font size="18.0" />
          </font>
@@ -152,7 +152,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="227.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập họ và tên...">
+      <TextField fx:id="tfHoVaTen" layoutX="910.0" layoutY="227.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập họ và tên...">
          <font>
             <Font size="18.0" />
          </font>

@@ -62,4 +62,21 @@ public class NhanVienServices {
         }
         return false;
     }
+    public boolean setNhanVienMoi(NhanVien nv, String ngayVaoLam) {
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            int rs = stm.executeUpdate(String.format("" +
+                    "INSERT INTO nhanvien(Id, HeSoLuong, LuongCoBan, NgayVaoLam)\n" +
+                    "VALUES('%s', %.1f, %d, '%s')",
+                    nv.getMaNhanVien(),
+                    nv.getHeSoLuong(),
+                    nv.getLuongCoBan(),
+                    ngayVaoLam));
+
+            if (rs == 0) return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
 }
