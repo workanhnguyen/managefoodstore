@@ -27,12 +27,12 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="28.0" layoutY="233.0" prefHeight="399.0" prefWidth="1227.0">
+      <TableView fx:id="tableNL" layoutX="28.0" layoutY="233.0" prefHeight="399.0" prefWidth="1227.0">
         <columns>
-          <TableColumn prefWidth="213.06669235229492" text="Mã nguyên liệu" />
-          <TableColumn minWidth="0.0" prefWidth="432.5332794189453" text="Tên nguyên liệu" />
-            <TableColumn minWidth="0.0" prefWidth="225.86669921875" text="Còn lại" />
-            <TableColumn minWidth="0.0" prefWidth="355.73333740234375" text="Đơn vị" />
+          <TableColumn fx:id="idNguyenLieuColumn" prefWidth="213.06669235229492" text="Mã nguyên liệu" />
+          <TableColumn fx:id="tenNguyenLieuColumn" minWidth="0.0" prefWidth="432.5332794189453" text="Tên nguyên liệu" />
+            <TableColumn fx:id="soLuongColumn" minWidth="0.0" prefWidth="225.86669921875" text="Còn lại" />
+            <TableColumn fx:id="donViColumn" minWidth="0.0" prefWidth="355.73333740234375" text="Đơn vị" />
         </columns>
       </TableView>
       <Button layoutX="24.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="47.0" prefWidth="253.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
@@ -55,7 +55,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="1032.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToOrderMaterialPage" prefHeight="47.0" prefWidth="222.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT HÀNG">
+      <Button fx:id="btnDatHang" layoutX="1032.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToOrderMaterialPage" prefHeight="47.0" prefWidth="222.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT HÀNG">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

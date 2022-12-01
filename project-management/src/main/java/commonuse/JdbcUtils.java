@@ -17,7 +17,7 @@ public class JdbcUtils {
     public static Connection getConn() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/foodstoredb", "root", "09102002anha");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/foodstoredb", "root", "altff12345");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
