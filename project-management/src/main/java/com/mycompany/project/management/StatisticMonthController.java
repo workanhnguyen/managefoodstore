@@ -44,9 +44,6 @@ public class StatisticMonthController implements Initializable {
                 App.setRoot("statistic-month");
                 break;
             case 3:
-                App.setRoot("statistic-quarter");
-                break;
-            case 4:
                 App.setRoot("statistic-year");
                 break;
         }
