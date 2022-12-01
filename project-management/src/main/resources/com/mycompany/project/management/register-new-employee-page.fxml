@@ -28,7 +28,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="879.0" layoutY="74.0" prefHeight="35.0" prefWidth="261.0" text="Họ và tên quản trị viên ">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="672.0" layoutY="74.0" prefHeight="35.0" prefWidth="468.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="248.0" layoutY="217.0" prefHeight="40.0" prefWidth="282.0" promptText="Số điện thoại">
+      <TextField fx:id="tfSoDienThoai" layoutX="248.0" layoutY="217.0" prefHeight="40.0" prefWidth="282.0" promptText="Số điện thoại">
          <font>
             <Font size="18.0" />
          </font>
@@ -72,7 +72,7 @@
             <String fx:value="btn" />
          </styleClass>
       </Button>
-      <Button layoutX="485.0" layoutY="617.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="308.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ ">
+      <Button layoutX="485.0" layoutY="617.0" mnemonicParsing="false" onAction="#btnDangKyNhanVien" prefHeight="53.0" prefWidth="308.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐĂNG KÝ ">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -81,7 +81,7 @@
             <String fx:value="btn" />
          </styleClass>
       </Button>
-      <Button layoutX="997.0" layoutY="617.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="191.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY">
+      <Button layoutX="997.0" layoutY="617.0" mnemonicParsing="false" onAction="#btnHuyThongTin" prefHeight="53.0" prefWidth="191.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -90,7 +90,7 @@
             <String fx:value="btn" />
          </styleClass>
       </Button>
-      <PasswordField layoutX="248.0" layoutY="274.0" prefHeight="40.0" prefWidth="282.0" promptText="Mật khẩu">
+      <PasswordField fx:id="pfMatKhau" layoutX="248.0" layoutY="274.0" prefHeight="40.0" prefWidth="282.0" promptText="Mật khẩu">
          <font>
             <Font size="18.0" />
          </font>
@@ -105,18 +105,18 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <PasswordField layoutX="248.0" layoutY="334.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập lại mật khẩu">
+      <PasswordField fx:id="pfNhapLaiMatKhau" layoutX="248.0" layoutY="334.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập lại mật khẩu">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <DatePicker layoutX="909.0" layoutY="282.0" prefHeight="40.0" prefWidth="281.0" promptText="MM/dd/yyyy" />
+      <DatePicker fx:id="dpNgaySinh" editable="false" layoutX="909.0" layoutY="282.0" prefHeight="40.0" prefWidth="281.0" />
       <Label layoutX="721.0" layoutY="343.0" prefHeight="35.0" prefWidth="138.0" text="Địa chỉ:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="339.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập địa chỉ...">
+      <TextField fx:id="tfDiaChi" layoutX="910.0" layoutY="339.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập địa chỉ...">
          <font>
             <Font size="18.0" />
          </font>
@@ -126,8 +126,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker layoutX="910.0" layoutY="397.0" prefHeight="40.0" prefWidth="281.0" promptText="MM/dd/yyyy" />
-      <TextField layoutX="910.0" layoutY="454.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập mức lương...">
+      <DatePicker fx:id="dpNgayVaoLam" editable="false" layoutX="910.0" layoutY="397.0" prefHeight="40.0" prefWidth="281.0" />
+      <TextField fx:id="tfLuongCoBan" layoutX="910.0" layoutY="454.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập mức lương...">
          <font>
             <Font size="18.0" />
          </font>
@@ -137,14 +137,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="512.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập hệ số lương...">
+      <TextField fx:id="tfHeSoLuong" layoutX="910.0" layoutY="512.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập hệ số lương...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="60.0" layoutY="573.0" prefHeight="25.0" prefWidth="537.0" text="Thông báo thành công hoặc lỗi cụ thể" textFill="#e70808">
+      <Label fx:id="lbAlert" alignment="TOP_LEFT" layoutX="67.0" layoutY="388.0" prefHeight="191.0" prefWidth="537.0" textFill="#e70808" wrapText="true">
          <font>
-            <Font size="16.0" />
+            <Font size="10.0" />
          </font>
       </Label>
       <Label layoutX="721.0" layoutY="230.0" prefHeight="35.0" prefWidth="138.0" text="Họ và tên:">
@@ -152,7 +152,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="910.0" layoutY="227.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập họ và tên...">
+      <TextField fx:id="tfHoVaTen" layoutX="910.0" layoutY="227.0" prefHeight="40.0" prefWidth="282.0" promptText="Nhập họ và tên...">
          <font>
             <Font size="18.0" />
          </font>

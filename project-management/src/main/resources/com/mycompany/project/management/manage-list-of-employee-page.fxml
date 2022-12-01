@@ -27,15 +27,16 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="28.0" layoutY="233.0" prefHeight="399.0" prefWidth="1227.0">
+      <TableView fx:id="tbvNhanVien" layoutX="28.0" layoutY="233.0" prefHeight="399.0" prefWidth="1227.0">
         <columns>
-          <TableColumn prefWidth="134.13330268859863" text="ID" />
-          <TableColumn minWidth="0.0" prefWidth="262.6666717529297" text="Tên NV" />
-            <TableColumn minWidth="0.0" prefWidth="175.73330688476562" text="Địa chỉ " />
-            <TableColumn prefWidth="199.73324584960938" text="Ngày sinh " />
-            <TableColumn prefWidth="160.5333251953125" text="Ngày vào làm " />
-            <TableColumn minWidth="0.0" prefWidth="127.466552734375" text="Hệ số lương " />
-            <TableColumn minWidth="0.0" prefWidth="173.59979248046875" text="Lương cơ bản" />
+          <TableColumn fx:id="tbvNhanVien_soDienThoai" prefWidth="156.26663398742676" text="Số điện thoại" />
+          <TableColumn fx:id="tbvNhanVien_ho" minWidth="0.0" prefWidth="236.5333251953125" text="Họ" />
+            <TableColumn fx:id="tbvNhanVien_ten" minWidth="0.0" prefWidth="111.19992065429688" text="Tên" />
+            <TableColumn fx:id="tbvNhanVien_ngaySinh" prefWidth="149.06661987304688" text="Ngày sinh" />
+            <TableColumn fx:id="tbvNhanVien_diaChi" prefWidth="207.73321533203125" text="Địa chỉ" />
+            <TableColumn fx:id="tbvNhanVien_ngayVaoLam" minWidth="0.0" prefWidth="138.933349609375" text="Ngày vào làm" />
+            <TableColumn fx:id="tbvNhanVien_heSoLuong" minWidth="0.0" prefWidth="84.00018310546875" text="Hệ số lương" />
+            <TableColumn fx:id="tbvNhanVien_luongCoBan" prefWidth="147.733642578125" text="Lương cơ bản" />
         </columns>
       </TableView>
       <Button layoutX="1034.0" layoutY="171.0" mnemonicParsing="false" onAction="#switchToRegisterNewEmployeePage" prefHeight="47.0" prefWidth="222.0" stylesheets="@../../../../css/GlobalStyle.css" text="THÊM ">
@@ -62,7 +63,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="913.0" layoutY="64.0" text="Họ và tên quản trị viên">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="660.0" layoutY="64.0" prefHeight="35.0" prefWidth="494.0" text="Họ và tên quản trị viên">
          <font>
             <Font size="24.0" />
          </font>

@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -44,9 +44,6 @@ public class StatisticCustomTimeController implements Initializable {
                 App.setRoot("statistic-month");
                 break;
             case 3:
-                App.setRoot("statistic-quarter");
-                break;
-            case 4:
                 App.setRoot("statistic-year");
                 break;
         }

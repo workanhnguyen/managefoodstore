@@ -50,4 +50,25 @@ public class NguoiDungServices {
         }
         return resultStr;
     }
+    public boolean setNguoiDungMoi(NguoiDung nd, String ngaySinh) {
+        int vaiTro = nd.isVaiTro() ? 1 : 0;
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            int rs = stm.executeUpdate(String.format("" +
+                    "INSERT INTO nguoidung(Id, MatKhau, Ho, Ten, NgaySinh, DiaChi, VaiTro)\n" +
+                    "VALUES('%s', '%s', '%s', '%s', '%s', '%s', %d)\n",
+                    nd.getId(),
+                    nd.getMatKhau(),
+                    nd.getHo(),
+                    nd.getTen(),
+                    ngaySinh,
+                    nd.getDiaChi(),
+                    vaiTro));
+
+            if (rs == 0) return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
 }

@@ -32,7 +32,7 @@ public class StatisticYearController implements Initializable {
         TimeFieldServices tf = new TimeFieldServices();
         List<TimeField> listTf = tf.getDanhSachTimeField();
         this.cbTimeField.setItems(FXCollections.observableList(listTf));
-        this.cbTimeField.setPromptText(listTf.get(3).getName());
+        this.cbTimeField.setPromptText(listTf.get(2).getName());
     }
     @FXML
     public void changTimeField(ActionEvent event) throws IOException {
@@ -45,9 +45,6 @@ public class StatisticYearController implements Initializable {
                 App.setRoot("statistic-month");
                 break;
             case 3:
-                App.setRoot("statistic-quarter");
-                break;
-            case 4:
                 App.setRoot("statistic-year");
                 break;
         }

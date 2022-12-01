@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,7 +24,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="902.0" layoutY="76.0" text="Họ và tên quản trị viên">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="683.0" layoutY="76.0" prefHeight="36.0" prefWidth="470.0" text="Họ và tên quản trị viên">
          <font>
             <Font size="25.0" />
          </font>
@@ -38,14 +39,17 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="35.0" layoutY="161.0" prefHeight="359.0" prefWidth="568.0">
+      <TableView fx:id="tableNL" layoutX="35.0" layoutY="161.0" prefHeight="359.0" prefWidth="568.0">
         <columns>
-          <TableColumn prefWidth="138.39999389648438" text="ID" />
-          <TableColumn prefWidth="333.5999755859375" text="Tên" />
-            <TableColumn prefWidth="96.79998779296875" text="Số lượng" />
+          <TableColumn fx:id="idNguyenLieuColumn" prefWidth="138.39999389648438" text="ID" />
+          <TableColumn fx:id="tenNguyenLieuColumn" prefWidth="333.5999755859375" text="Tên" />
+            <TableColumn fx:id="soLuongColumn" prefWidth="96.79998779296875" text="Số lượng" />
         </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </TableView>
-      <Button layoutX="34.0" layoutY="537.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="245.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT THÊM">
+      <Button fx:id="btnDatThem" layoutX="34.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnDatThemNL" prefHeight="52.0" prefWidth="245.0" stylesheets="@../../../../css/GlobalStyle.css" text="ĐẶT THÊM">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -53,13 +57,16 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Label layoutX="698.0" layoutY="202.0" text="Mã hóa đơn:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="849.0" layoutY="196.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Mã hóa đơn hiển thị ở đây">
+      <Label fx:id="lbmaHoaDon" layoutX="849.0" layoutY="196.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css">
          <font>
             <Font size="18.0" />
          </font>
@@ -69,7 +76,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="849.0" layoutY="247.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Mã nguyên liệu hiển thị ở đây">
+      <Label fx:id="lbmaNL" layoutX="849.0" layoutY="247.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css">
          <font>
             <Font size="18.0" />
          </font>
@@ -79,7 +86,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="848.0" layoutY="299.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css" text="Tên nguyên liệu hiển thị ở đây">
+      <Label fx:id="lbtenNL" layoutX="848.0" layoutY="299.0" prefHeight="37.0" prefWidth="304.0" styleClass="label-show-info" stylesheets="@../../../../css/GlobalStyle.css">
          <font>
             <Font size="18.0" />
          </font>
@@ -89,24 +96,24 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="848.0" layoutY="350.0" prefHeight="34.0" prefWidth="304.0" />
+      <TextField fx:id="txtSLMua" disable="true" editable="false" layoutX="848.0" layoutY="350.0" onKeyPressed="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
       <Label layoutX="697.0" layoutY="402.0" text="Đơn giá mua:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="848.0" layoutY="398.0" prefHeight="34.0" prefWidth="304.0" />
+      <TextField fx:id="txtDonGiaMua" disable="true" editable="false" layoutX="848.0" layoutY="398.0" onKeyPressed="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
       <Label layoutX="696.0" layoutY="454.0" text="THÀNH TIỀN:">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="886.0" layoutY="452.0" prefHeight="37.0" prefWidth="228.0" text="200000 VND" textAlignment="RIGHT" textFill="#e40505">
+      <Label fx:id="lbThanhTien" layoutX="886.0" layoutY="452.0" prefHeight="37.0" prefWidth="228.0" textAlignment="RIGHT" textFill="#e40505">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="695.0" layoutY="537.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="228.0" stylesheets="@../../../../css/GlobalStyle.css" text="XUẤT PHIẾU">
+      <Button fx:id="btnXuatPhieu" layoutX="695.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnXuatPhieuDatHang" prefHeight="51.0" prefWidth="228.0" stylesheets="@../../../../css/GlobalStyle.css" text="XUẤT PHIẾU">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-green" />
@@ -114,8 +121,11 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button layoutX="934.0" layoutY="535.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="220.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY BỎ" textFill="#b40a0a">
+      <Button fx:id="btnHuyDat" layoutX="934.0" layoutY="535.0" mnemonicParsing="false" onAction="#btnHuyDatHang" prefHeight="51.0" prefWidth="220.0" stylesheets="@../../../../css/GlobalStyle.css" text="HỦY BỎ" textFill="#b40a0a">
          <styleClass>
             <String fx:value="btn" />
             <String fx:value="bg-red" />
@@ -123,8 +133,11 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="697.0" layoutY="502.0" text="Thông báo thành công hoặc thông báo lỗi" textFill="#fc0909">
+      <Label fx:id="lbAlert" layoutX="697.0" layoutY="502.0" textFill="#fc0909">
          <font>
             <Font size="14.0" />
          </font>
@@ -134,6 +147,9 @@
             <String fx:value="btn" />
             <String fx:value="bg-yellow" />
          </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </Pane>

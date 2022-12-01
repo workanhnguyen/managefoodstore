@@ -19,4 +19,24 @@ public class UnitTest_Utility {
     public void testSoDienThoai(String input, int expectedOutput) {
         Assertions.assertEquals(expectedOutput, Utility.kiemTraSoDienThoaiHopLe(input));
     }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_matkhau.csv", numLinesToSkip = 1)
+    public void testMatKhau(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraMatKhauHopLe(input));
+    }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_hoten.csv", numLinesToSkip = 1)
+    public void testHoVaTen(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraHoVaTenHopLe(input));
+    }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_hesoluong.csv", numLinesToSkip = 1)
+    public void testHeSoLuong(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraHeSoLuongHopLe(input));
+    }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_luongcoban.csv", numLinesToSkip = 1)
+    public void testLuongCoBan(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraLuongHopLe(input));
+    }
 }
