@@ -128,6 +128,34 @@ public class Utility {
         else if (Integer.parseInt(inputStr) <= 0) return -2;
         else return 1;
     }
+    /**
+     * Giá trị trả về tương ứng với các lỗi sau:
+     * 0: chuỗi rỗng
+     * -1: chuỗi chứa kí tự đặc biệt hoặc chữ cái
+     * -2: giá trị tháng không hợp lệ
+     * */
+    public static int kiemTraThangHopLe(String inputStr) {
+        Pattern p = Pattern.compile("\\d*");
+        Matcher matcher = p.matcher(inputStr);
+        if (inputStr.isBlank() || inputStr.isEmpty()) return 0;
+        else if (!matcher.matches()) return -1;
+        else if (Integer.parseInt(inputStr) <= 0 ||  Integer.parseInt(inputStr) > 12) return -2;
+        else return 1;
+    }
+    /**
+     * Giá trị trả về tương ứng với các lỗi sau:
+     * 0: chuỗi rỗng
+     * -1: chuỗi chứa kí tự đặc biệt hoặc chữ cái
+     * -2: giá trị năm không hợp lệ (< 1900)
+     * */
+    public static int kiemTraNamHopLe(String inputStr) {
+        Pattern p = Pattern.compile("\\d*");
+        Matcher matcher = p.matcher(inputStr);
+        if (inputStr.isBlank() || inputStr.isEmpty()) return 0;
+        else if (!matcher.matches()) return -1;
+        else if (Integer.parseInt(inputStr) < 1900) return -2;
+        else return 1;
+    }
     /** Tạo ra một hộp thoại */
     public static Optional<ButtonType> showAlertDialog(String title, String content, Alert.AlertType type) {
         Alert alert = new Alert(type);

@@ -39,4 +39,14 @@ public class UnitTest_Utility {
     public void testLuongCoBan(String input, int expectedOutput) {
         Assertions.assertEquals(expectedOutput, Utility.kiemTraLuongHopLe(input));
     }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_dongiamathang.csv", numLinesToSkip = 1)
+    public void testDonGiaMatHangHopLe(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraDonGiaHopLe(input));
+    }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data_soluongmathang.csv", numLinesToSkip = 1)
+    public void testSoLuongMatHangHopLe(String input, int expectedOutput) {
+        Assertions.assertEquals(expectedOutput, Utility.kiemTraDonGiaHopLe(input));
+    }
 }
