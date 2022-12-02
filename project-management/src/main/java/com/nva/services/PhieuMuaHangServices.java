@@ -50,4 +50,54 @@ public class PhieuMuaHangServices {
         }
         return newCode;
     }
+    public int thongKeTongTienTheoThoiGianTuyChinh(String thoiGianBatDau, String thoiGianKetThuc) {
+        int sum = 0;
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(String.format("" +
+                    "SELECT SUM(ThanhTien)\n" +
+                    "FROM phieumuahang\n" +
+                    "WHERE NgayNhapPhieu BETWEEN '%s 00:00:00' AND '%s 23:59:59'",
+                    thoiGianBatDau,
+                    thoiGianKetThuc));
+            if (rs.next()) {
+                sum = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+    public int thongKeTheoThang(String thang, String nam) {
+        int sum = 0;
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(String.format("" +
+                            "SELECT SUM(ThanhTien)\n" +
+                            "FROM phieumuahang\n" +
+                            "WHERE YEAR(NgayNhapPhieu) = '%s' AND MONTH(NgayNhapPhieu) = '%s'", nam, thang));
+            if (rs.next()) {
+                sum = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+    public int thongKeTheoNam(String nam) {
+        int sum = 0;
+        try (Connection conn = JdbcUtils.getConn()) {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(String.format("" +
+                    "SELECT SUM(ThanhTien)\n" +
+                    "FROM phieumuahang\n" +
+                    "WHERE YEAR(NgayNhapPhieu) = '%s'", nam));
+            if (rs.next()) {
+                sum = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
 }

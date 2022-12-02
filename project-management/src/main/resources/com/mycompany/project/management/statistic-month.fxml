@@ -28,7 +28,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER_RIGHT" layoutX="857.0" layoutY="68.0" prefHeight="53.0" prefWidth="280.0" text="Họ và tên quản trị viên" textAlignment="RIGHT">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="747.0" layoutY="68.0" prefHeight="54.0" prefWidth="390.0" textAlignment="RIGHT">
          <font>
             <Font size="24.0" />
          </font>
@@ -39,7 +39,7 @@
          </font>
       </Label>
       <ComboBox fx:id="cbTimeField" layoutX="380.0" layoutY="147.0" onAction="#changTimeField" prefHeight="50.0" prefWidth="562.0" />
-      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" styleClass="bg-yellow" stylesheets="@../../../../css/GlobalStyle.css" text="THỐNG KÊ" textFill="WHITE">
+      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnThongKe" prefHeight="50.0" prefWidth="194.0" styleClass="bg-yellow" stylesheets="@../../../../css/GlobalStyle.css" text="THỐNG KÊ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="598.0" layoutY="326.0" prefHeight="30.0" prefWidth="194.0" text="*Thông báo thời gian không hợp lệ " textFill="#ff1616" />
+      <Label fx:id="lbAlert" layoutX="598.0" layoutY="326.0" prefHeight="30.0" prefWidth="419.0" textFill="#ff1616" />
       <Button layoutX="36.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="54.0" prefWidth="150.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -87,27 +87,27 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="427.0" prefHeight="30.0" prefWidth="170.0" text="170.000.000 VNĐ">
+      <Label fx:id="lbTongVon" layoutX="520.0" layoutY="427.0" prefHeight="30.0" prefWidth="170.0" text="0 VND">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="461.0" prefHeight="30.0" prefWidth="170.0" text="250.000.000 VNĐ">
+      <Label fx:id="lbTongThu" layoutX="520.0" layoutY="461.0" prefHeight="30.0" prefWidth="170.0" text="0 VND">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="495.0" prefHeight="30.0" prefWidth="170.0" text="80.000.000 VNĐ" textFill="#26b8cf">
+      <Label fx:id="lbTienLoi" layoutX="520.0" layoutY="495.0" prefHeight="30.0" prefWidth="170.0" text="0 VND" textFill="#26b8cf">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="592.0" layoutY="209.0" prefHeight="43.0" prefWidth="349.0">
+      <TextField fx:id="tfThang" layoutX="592.0" layoutY="209.0" prefHeight="43.0" prefWidth="349.0">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="592.0" layoutY="269.0" prefHeight="43.0" prefWidth="349.0">
+      <TextField fx:id="tfNam" layoutX="592.0" layoutY="269.0" prefHeight="43.0" prefWidth="349.0">
          <font>
             <Font size="20.0" />
          </font>

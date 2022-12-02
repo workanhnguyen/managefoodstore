@@ -28,7 +28,7 @@
             <Image url="@../../../../images/manager-avt.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER_RIGHT" layoutX="857.0" layoutY="68.0" prefHeight="53.0" prefWidth="280.0" text="Họ và tên quản trị viên" textAlignment="RIGHT">
+      <Label fx:id="lbHoTen" alignment="CENTER_RIGHT" layoutX="857.0" layoutY="68.0" prefHeight="53.0" prefWidth="280.0" text="Họ và tên quản trị viên" textAlignment="RIGHT">
          <font>
             <Font size="24.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="194.0" styleClass="bg-yellow" stylesheets="@../../../../css/GlobalStyle.css" text="THỐNG KÊ" textFill="WHITE">
+      <Button layoutX="942.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnThongKe" prefHeight="50.0" prefWidth="194.0" styleClass="bg-yellow" stylesheets="@../../../../css/GlobalStyle.css" text="THỐNG KÊ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -51,7 +51,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="598.0" layoutY="326.0" prefHeight="30.0" prefWidth="194.0" text="*Thông báo thời gian không hợp lệ " textFill="#ff1616" />
+      <Label fx:id="lbAlert" layoutX="598.0" layoutY="326.0" prefHeight="30.0" prefWidth="539.0" textFill="#ff1616" />
       <Button layoutX="36.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToManagerFunctionsPage" prefHeight="54.0" prefWidth="150.0" stylesheets="@../../../../css/GlobalStyle.css" text="TRỞ LẠI">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -81,24 +81,24 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="598.0" layoutY="213.0" prefHeight="42.0" prefWidth="347.0" />
+      <DatePicker fx:id="dpThoiGianBatDau" editable="false" layoutX="598.0" layoutY="213.0" prefHeight="42.0" prefWidth="347.0" />
       <Label layoutX="382.0" layoutY="274.0" prefHeight="35.0" prefWidth="212.0" text="Thời gian kết thúc:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <DatePicker layoutX="598.0" layoutY="270.0" prefHeight="42.0" prefWidth="347.0" />
-      <Label layoutX="520.0" layoutY="427.0" prefHeight="30.0" prefWidth="170.0" text="170.000.000 VNĐ">
+      <DatePicker fx:id="dpThoiGianKetThuc" editable="false" layoutX="598.0" layoutY="270.0" prefHeight="42.0" prefWidth="347.0" />
+      <Label fx:id="lbTongVon" layoutX="520.0" layoutY="427.0" prefHeight="30.0" prefWidth="170.0" text="0 VND">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="461.0" prefHeight="30.0" prefWidth="170.0" text="250.000.000 VNĐ">
+      <Label fx:id="lbTongThu" layoutX="520.0" layoutY="461.0" prefHeight="30.0" prefWidth="170.0" text="0 VND">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="495.0" prefHeight="30.0" prefWidth="170.0" text="80.000.000 VNĐ" textFill="#26b8cf">
+      <Label fx:id="lbTienLoi" layoutX="520.0" layoutY="495.0" prefHeight="30.0" prefWidth="170.0" text="0 VND" textFill="#26b8cf">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
