@@ -4,3 +4,5 @@ Authors:
 3. 2054052023 - Phạm Thị Thùy Hương (Dev)
 4. 2054052007 - Phạm Nguyễn Như Bình (Tester)
 5. 2054052064 - Phạm Thu Thủy (Tester)
+
+@2022 - Trường Đại học Mở Thành phố Hồ Chí Minh
