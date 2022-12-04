@@ -43,7 +43,7 @@ public class ManageListOfEmployeePageController implements Initializable {
     private List<NhanVien> listNv = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        this.lbHoTen.setText(NguoiDungServices.nguoiDung.getFullName());
+        this.lbHoTen.setText(NguoiDungServices.nguoiDung.getFullName());
         render();
     }
     @FXML

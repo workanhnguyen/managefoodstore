@@ -5,14 +5,11 @@ import java.util.List;
 import java.util.Objects;
 
 import com.nva.pojo.NguoiDung;
-import com.nva.pojo.NhanVien;
 import com.nva.services.NguoiDungServices;
-import com.nva.services.NhanVienServices;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class MainLoginPageController {
 

@@ -7,8 +7,6 @@ package com.mycompany.project.management;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 import com.nva.pojo.NguoiDung;
@@ -83,9 +81,6 @@ public class RegisterNewEmployeePageController implements Initializable {
                 // Thực hiện thêm dữ liệu vào bảng nguoidung
                 if (nd_S.setNguoiDungMoi(nd, dpNgaySinh.getValue().toString())) {
 
-//                    ((NhanVien) nd).setMaNhanVien(nd.getId());
-//                    ((NhanVien) nd).setHeSoLuong(Float.parseFloat(tfHeSoLuong.getText()));
-//                    ((NhanVien) nd).setLuongCoBan(Integer.parseInt(tfLuongCoBan.getText()));
                     NhanVien nv = new NhanVien();
                     nv.setMaNhanVien(nd.getId());
                     nv.setHeSoLuong(Float.parseFloat(tfHeSoLuong.getText()));
