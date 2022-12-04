@@ -35,10 +35,9 @@ public class RegisterMemberPageController implements Initializable {
         khachHang.setMaKhachHang(tfSoDienThoai.getText().trim());
         khachHang.setDiemThuong(0);
 
-        int errorCode_hoTen = Utility.kiemTraHoVaTenHopLe(khachHang.getHoKhachHang() + " " + khachHang.getTenKhachHang());
-        int errorCode_soDienThoai = Utility.kiemTraSoDienThoaiHopLe(khachHang.getMaKhachHang());
+        int errorCode = kh.kiemTraDuLieuHopLe(khachHang);
         String alertInfo = "";
-        if (errorCode_hoTen == 1 && errorCode_soDienThoai == 1) {
+        if (errorCode == 1) {
             if (!kh.kiemTraKhachHangTonTai(khachHang.getMaKhachHang())) {
                 if(kh.addKhachHangMoi(khachHang)) {
                     Utility.showAlertDialog("Thông báo",
@@ -51,33 +50,17 @@ public class RegisterMemberPageController implements Initializable {
             } else {
                 alertInfo = "Số điện thoại này đã tồn tại!";
             }
-        } else {
-            alertInfo = getThongBaoLoi(errorCode_hoTen, errorCode_soDienThoai);
+        } else if (errorCode == 0) {
+            alertInfo = "Vui lòng điền đầy đủ thông tin!";
+        } else if (errorCode == -1 || errorCode == -2 || errorCode == -3) {
+            alertInfo = "Định dạng số điện thoại không hợp lệ!";
+        } else if (errorCode == -4) {
+            alertInfo = "Họ hoặc tên quá dài!";
         }
         lbAlert.setText(alertInfo);
     }
     @FXML
     private void switchToHandleBillPage() throws IOException {
         App.setRoot("handle-bill-page");
-    }
-    private String getThongBaoLoi(int errorCode_hoTen, int errorCode_soDienThoai) {
-        String alertInfo = "";
-        if (errorCode_hoTen == 0 || errorCode_soDienThoai == 0)
-            alertInfo += "Vui lòng nhập đầy đủ thông tin!\n";
-        else {
-            if (errorCode_hoTen == -1)
-                alertInfo += "Họ tên không hợp lệ!\n";
-            else if (errorCode_hoTen == -2)
-                alertInfo += "Họ tên quá dài!\n";
-            else {
-                if (errorCode_soDienThoai == -1)
-                    alertInfo += "Số điện thoại không hợp lệ!\n";
-                else if (errorCode_soDienThoai == -2)
-                    alertInfo += "Số điện thoại phải bắt đầu bằng số '0'\n";
-                else if (errorCode_soDienThoai == -3)
-                    alertInfo += "Số điện thoại phải đủ 10 chữ số\n";
-            }
-        }
-        return alertInfo;
     }
 }

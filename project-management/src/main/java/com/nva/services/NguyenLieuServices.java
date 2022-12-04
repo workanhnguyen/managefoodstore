@@ -2,12 +2,15 @@ package com.nva.services;
 
 import com.nva.pojo.NguyenLieu;
 import commonuse.JdbcUtils;
+import com.nva.pojo.PhieuMuaHang;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 
 public class NguyenLieuServices {
     public List<NguyenLieu> getDanhSachNguyenLieu() {
@@ -37,7 +40,7 @@ public class NguyenLieuServices {
                                 "FROM nguyenlieu\n" +
                                 "WHERE MaNguyenLieu = '%s'", maNguyenLieu));
                 if (rs.next()) {
-                    if (rs.getInt(1) <= 0) return false;
+                    if (rs.getInt("SoLuong") <= 0) return false;
                 }
             }
         } catch (SQLException e) {

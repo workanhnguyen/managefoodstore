@@ -162,7 +162,7 @@ public class HandleBillPageController implements Initializable {
                     if (tempH.deleteHoaDonTamThoi(tempBill.getMaHoaDon())) {
                         //Cập nhật lại trạng thái của bàn
                         b.capNhatTrangThai(tempBill.getMaBan(), 1);
-                        Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thành công!", Alert.AlertType.INFORMATION);
+                        Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thành công!" + tempBill.getMaHoaDon(), Alert.AlertType.INFORMATION);
                         App.setRoot("employee-functions-page");
                     } else {
                         Utility.showAlertDialog("Thông báo", "Thêm hóa đơn thất bại! (ErrorCode: 001)", Alert.AlertType.ERROR);
