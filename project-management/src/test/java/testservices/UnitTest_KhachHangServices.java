@@ -33,27 +33,4 @@ public class UnitTest_KhachHangServices {
     public void testKiemTraKhachHangTonTai(String soDienThoai, boolean expectOutput) {
         Assertions.assertEquals(expectOutput, kh_S.kiemTraKhachHangTonTai(soDienThoai));
     }
-    @ParameterizedTest
-    @CsvFileSource(resources = "/data3_khachhang.csv", numLinesToSkip = 1)
-    public void testCapNhatDiemThuong(String soDienThoai, int diemThuong, boolean expectOutput) {
-        Assertions.assertEquals(expectOutput, kh_S.capNhatDiemThuong(soDienThoai, diemThuong));
-    }
-    @ParameterizedTest
-    @CsvFileSource(resources = "/data4_khachhang.csv", numLinesToSkip = 1)
-    public void testThemKhachHang(String soDienThoai, String ho, String ten, int diemThuong, boolean expectOutput) {
-        KhachHang kh = new KhachHang();
-        kh.setMaKhachHang(soDienThoai);
-        kh.setHoKhachHang(ho);
-        kh.setTenKhachHang(ten);
-        kh.setDiemThuong(diemThuong);
-
-        Assertions.assertEquals(expectOutput, kh_S.addKhachHangMoi(kh));
-    }
-    @ParameterizedTest
-    @CsvFileSource(resources = "/data5_khachhang.csv", numLinesToSkip = 1)
-    public void testGetKhachHang(String soDienThoai, String tenKhachHang) {
-        KhachHang kh = new KhachHang();
-        kh = kh_S.getKhachHang(soDienThoai);
-        Assertions.assertEquals(tenKhachHang, kh.getHoKhachHang() + " " + kh.getTenKhachHang());
-    }
 }
