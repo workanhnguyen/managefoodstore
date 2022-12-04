@@ -56,7 +56,8 @@ public class ManageListOfEmployeePageController implements Initializable {
     }
     private void render() {
         listNv = nv_S.getDanhSachNhanVien();
-        tbvNhanVien_soDienThoai.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("Id"));
+
+        tbvNhanVien_soDienThoai.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("id"));
         tbvNhanVien_ho.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("ho"));
         tbvNhanVien_ten.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("ten"));
         tbvNhanVien_ngaySinh.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("ngaySinh"));
@@ -64,6 +65,7 @@ public class ManageListOfEmployeePageController implements Initializable {
         tbvNhanVien_ngayVaoLam.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("ngayVaoLam"));
         tbvNhanVien_heSoLuong.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("heSoLuong"));
         tbvNhanVien_luongCoBan.setCellValueFactory(new PropertyValueFactory<NhanVien, String>("luongCoBan"));
+
         tbvNhanVien.setItems(FXCollections.observableArrayList(listNv));
     }
 }
