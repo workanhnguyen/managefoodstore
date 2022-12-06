@@ -4,7 +4,6 @@
  */
 package com.mycompany.project.management;
 
-import com.mycompany.project.management.App;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

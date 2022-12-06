@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.nva.pojo.NguoiDung;
 import com.nva.pojo.NhanVien;
 import com.nva.services.NguoiDungServices;
 import com.nva.services.NhanVienServices;

@@ -4,7 +4,6 @@
  */
 package com.mycompany.project.management;
 
-import com.mycompany.project.management.App;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -61,9 +60,9 @@ public class StatisticYearController implements Initializable {
             int tongVon = pmh_S.thongKeTheoNam(namThongKe);
             int tongThu = hd_S.thongKeTheoNam(namThongKe);
 
-            lbTongVon.setText(String.valueOf(tongVon) + " VND");
-            lbTongThu.setText(String.valueOf(tongThu) + " VND");
-            lbTienLoi.setText(String.valueOf(tongThu - tongVon) + " VND");
+            lbTongVon.setText(tongVon + " VND");
+            lbTongThu.setText(tongThu + " VND");
+            lbTienLoi.setText(tongThu - tongVon + " VND");
         } else {
             lbAlert.setText(alertInfo);
         }

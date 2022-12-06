@@ -8,17 +8,11 @@ import java.util.ResourceBundle;
 import com.nva.pojo.Ban;
 import com.nva.services.BanServices;
 import com.nva.services.NguoiDungServices;
-import com.nva.services.NhanVienServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
 
 public class EmployeeFunctionsPageController implements Initializable {
     //Khai bao bien FXML

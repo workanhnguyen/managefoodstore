@@ -16,6 +16,7 @@ public class Utility {
      * -3: chuỗi không đủ hoặc vượt quá 10 kí tự
      */
     public static int kiemTraSoDienThoaiHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile("\\d*");
         Matcher matcher = p.matcher(inputStr);
         if (!matcher.matches()) return -1;
@@ -33,6 +34,7 @@ public class Utility {
      * -3: chuỗi không đạt số lượng kí tự (8 <= x <= 20)
      * */
     public static int kiemTraMatKhauHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile(Constant.EXIST_IT_NHAT_MOT_SO_NGUYEN + Constant.EXIST_IT_NHAT_MOT_KY_TU_CHU_THUONG +
                 Constant.EXIST_IT_NHAT_MOT_KY_TU_CHU_HOA + Constant.EXIST_IT_NHAT_MOT_KY_TU_DAC_BIET + ".{8,20}");
         Matcher matcher = p.matcher(inputStr);
@@ -46,9 +48,10 @@ public class Utility {
      * Giá trị trả về tương ứng với các lỗi sau:
      * 0: chuỗi rỗng
      * -1: chuỗi chứa kí tự đặc biệt hoặc số
-     * -2: chuôỗi vượt quá độ dài quy định
+     * -2: chuỗi vượt quá độ dài quy định
      * */
     public static int kiemTraHoVaTenHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         String ho, ten;
         // Kiểm tra trong chuỗi tồn tại số
         Pattern p1 = Pattern.compile(Constant.EXIST_IT_NHAT_MOT_SO_NGUYEN+ ".{1,55}");
@@ -70,6 +73,7 @@ public class Utility {
     }
     /**
      * Giá trị trả về tương ứng với các lỗi sau:
+     * 1: Không có lỗi - thành công
      * 0: chuỗi rỗng
      * -1: chuỗi chứa kí tự đặc biệt hoặc chữ cái
      * -2: Lương <= 0
@@ -105,6 +109,7 @@ public class Utility {
      * -2: giá trị <= 0
      * */
     public static int kiemTraSoLuongHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile("\\d*");
         Matcher matcher = p.matcher(inputStr);
         if (!matcher.matches()) return -1;
@@ -119,6 +124,7 @@ public class Utility {
      * -2: giá trị <= 0
      * */
     public static int kiemTraDonGiaHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile("\\d*");
         Matcher matcher = p.matcher(inputStr);
         if (!matcher.matches()) return -1;
@@ -133,6 +139,7 @@ public class Utility {
      * -2: giá trị tháng không hợp lệ
      * */
     public static int kiemTraThangHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile("\\d*");
         Matcher matcher = p.matcher(inputStr);
         if (inputStr.isBlank() || inputStr.isEmpty()) return 0;
@@ -147,6 +154,7 @@ public class Utility {
      * -2: giá trị năm không hợp lệ (< 1900)
      * */
     public static int kiemTraNamHopLe(String inputStr) {
+        inputStr = inputStr.trim();
         Pattern p = Pattern.compile("\\d*");
         Matcher matcher = p.matcher(inputStr);
         if (inputStr.isBlank() || inputStr.isEmpty()) return 0;

@@ -96,13 +96,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSLMua" disable="true" editable="false" layoutX="848.0" layoutY="350.0" onKeyPressed="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
+      <TextField fx:id="txtSLMua" disable="true" editable="false" layoutX="848.0" layoutY="350.0" onInputMethodTextChanged="#showThanhTien" onKeyPressed="#showThanhTien" onKeyReleased="#showThanhTien" onKeyTyped="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
       <Label layoutX="697.0" layoutY="402.0" text="Đơn giá mua:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDonGiaMua" disable="true" editable="false" layoutX="848.0" layoutY="398.0" onKeyPressed="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
+      <TextField fx:id="txtDonGiaMua" disable="true" editable="false" layoutX="848.0" layoutY="398.0" onInputMethodTextChanged="#showThanhTien" onKeyPressed="#showThanhTien" onKeyReleased="#showThanhTien" onKeyTyped="#showThanhTien" prefHeight="34.0" prefWidth="304.0" />
       <Label layoutX="696.0" layoutY="454.0" text="THÀNH TIỀN:">
          <font>
             <Font name="System Bold" size="24.0" />

@@ -7,7 +7,6 @@ package com.mycompany.project.management;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -16,9 +15,7 @@ import com.nva.services.HoaDonServices;
 import com.nva.services.NguoiDungServices;
 import com.nva.services.PhieuMuaHangServices;
 import com.nva.services.TimeFieldServices;
-import commonuse.Utility;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -58,10 +55,10 @@ public class StatisticCustomTimeController implements Initializable {
         if (thoiGianBatDau != null && thoiGianKetThuc != null) {
             if (thoiGianBatDau.compareTo(thoiGianKetThuc) < 0) {
                 int tienVon = pmh_S.thongKeTongTienTheoThoiGianTuyChinh(thoiGianBatDau.toString(), thoiGianKetThuc.toString());
-                int tienLoi = hd_S.thongKeTongTienTheoThoiGianTuyChinh(thoiGianBatDau.toString(), thoiGianKetThuc.toString());
-                lbTongVon.setText(String.valueOf(tienVon) + " VND");
-                lbTongThu.setText(String.valueOf(tienLoi) + " VND");
-                lbTienLoi.setText((tienLoi - tienVon) + " VND");
+                int tienThu = hd_S.thongKeTongTienTheoThoiGianTuyChinh(thoiGianBatDau.toString(), thoiGianKetThuc.toString());
+                lbTongVon.setText(tienVon + " VND");
+                lbTongThu.setText(tienThu + " VND");
+                lbTienLoi.setText((tienThu - tienVon) + " VND");
             } else {
                 lbAlert.setText("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!\n");
             }
@@ -70,7 +67,7 @@ public class StatisticCustomTimeController implements Initializable {
         }
     }
     @FXML
-    public void changTimeField(ActionEvent event) throws IOException {
+    public void changTimeField() throws IOException {
         TimeField tf = cbTimeField.getValue();
         switch (tf.getId()) {
             case 1:

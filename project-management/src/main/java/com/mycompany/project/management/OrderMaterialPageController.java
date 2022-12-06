@@ -80,10 +80,9 @@ public class OrderMaterialPageController implements Initializable{
             phieuMuaHang.setMaPhieuMuaHang(pmh_S.getMaPhieuMuaHangLonNhat());
             phieuMuaHang.setMaNguyenLieu(selectedItem.getMaNguyenLieu());
 
+            lbmaHoaDon.setText(phieuMuaHang.getMaPhieuMuaHang());
             lbmaNL.setText(selectedItem.getMaNguyenLieu());
             lbtenNL.setText(selectedItem.getTenNguyenLieu());
-
-            lbmaHoaDon.setText(phieuMuaHang.getMaPhieuMuaHang());
         }
     }
     public void btnHuyDatHang(){

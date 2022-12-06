@@ -64,9 +64,9 @@ public class StatisticMonthController implements Initializable {
             int tongVon = pmh_S.thongKeTheoThang(thangThongKe, namThongKe);
             int tongThu = hd_S.thongKeTheoThang(thangThongKe, namThongKe);
 
-            lbTongVon.setText(String.valueOf(tongVon) + " VND");
-            lbTongThu.setText(String.valueOf(tongThu) + " VND");
-            lbTienLoi.setText(String.valueOf(tongThu - tongVon) + " VND");
+            lbTongVon.setText(tongVon + " VND");
+            lbTongThu.setText(tongThu + " VND");
+            lbTienLoi.setText(tongThu - tongVon + " VND");
         } else {
             lbAlert.setText(alertInfo);
         }

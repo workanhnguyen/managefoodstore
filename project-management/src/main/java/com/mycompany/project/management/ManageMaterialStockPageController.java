@@ -40,9 +40,6 @@ public class ManageMaterialStockPageController implements Initializable{
     private TableColumn<NguyenLieu,Integer> soLuongColumn;
     @FXML
     private TableColumn<NguyenLieu,String> donViColumn;
-    @FXML
-    private Button btnDatHang;
-    private boolean eventOnMousePressDatHang;
     NguyenLieuServices nl = new NguyenLieuServices ();
     
     List<NguyenLieu> showNguyenLieu = nl.getDanhSachNguyenLieu();

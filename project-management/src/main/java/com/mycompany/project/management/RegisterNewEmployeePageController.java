@@ -52,59 +52,64 @@ public class RegisterNewEmployeePageController implements Initializable {
             lbAlert.setText("");
             String alertInfo = getLoiDangKyTaiKhoan(tfSoDienThoai.getText(), pfMatKhau.getText(), pfNhapLaiMatKhau.getText());
             lbAlert.setText(alertInfo);
-        } else {
-            // Kiểm tra thông tin đăng ký nhân viên
-            int errorCode_hoTen = Utility.kiemTraHoVaTenHopLe(tfHoVaTen.getText());
-            int errorCode_luongCoBan = Utility.kiemTraLuongHopLe(tfLuongCoBan.getText());
-            int errorCode_heSoLuong = Utility.kiemTraHeSoLuongHopLe(tfHeSoLuong.getText());
-            LocalDate ngaySinh = dpNgaySinh.getValue();
-            LocalDate ngayVaoLam = dpNgayVaoLam.getValue();
-            String diaChi = tfDiaChi.getText();
+        } else if (errorCode_soDienThoai == 1 && errorCode_matKhau == 1){
+            if (nv_S.kiemTraNhanVienTonTai(tfSoDienThoai.getText())) {
+                lbAlert.setText("Số điện thoại đã tồn tại!");
+            } else {
+                // Kiểm tra thông tin đăng ký nhân viên
+                int errorCode_hoTen = Utility.kiemTraHoVaTenHopLe(tfHoVaTen.getText());
+                int errorCode_luongCoBan = Utility.kiemTraLuongHopLe(tfLuongCoBan.getText());
+                int errorCode_heSoLuong = Utility.kiemTraHeSoLuongHopLe(tfHeSoLuong.getText());
 
-            if (
-                    errorCode_hoTen == 1
-                            && errorCode_luongCoBan == 1
-                            && errorCode_heSoLuong == 1
-                            && ngaySinh != null
-                            && ngayVaoLam != null
-                            && ngaySinh.compareTo(LocalDate.now()) < 0
-                            && !diaChi.isEmpty() &&
-                            !diaChi.isBlank()) {
-                // Thực hiện xử lý thêm dữ liệu nhân viên vào database
-                NguoiDung nd = new NhanVien();
-                nd.setId(tfSoDienThoai.getText());
-                nd.setMatKhau(pfMatKhau.getText());
-                nd.setHo(tfHoVaTen.getText().substring(0, tfHoVaTen.getText().lastIndexOf(" ")));
-                nd.setTen(tfHoVaTen.getText().substring(tfHoVaTen.getText().lastIndexOf(" ")));
-                nd.setDiaChi(tfDiaChi.getText());
-                nd.setVaiTro(false);
-                // Thực hiện thêm dữ liệu vào bảng nguoidung
-                if (nd_S.setNguoiDungMoi(nd, dpNgaySinh.getValue().toString())) {
+                LocalDate ngaySinh = dpNgaySinh.getValue();
+                LocalDate ngayVaoLam = dpNgayVaoLam.getValue();
+                String diaChi = tfDiaChi.getText();
 
-                    NhanVien nv = new NhanVien();
-                    nv.setMaNhanVien(nd.getId());
-                    nv.setHeSoLuong(Float.parseFloat(tfHeSoLuong.getText()));
-                    nv.setLuongCoBan(Integer.parseInt(tfLuongCoBan.getText()));
+                if (
+                        errorCode_hoTen == 1
+                                && errorCode_luongCoBan == 1
+                                && errorCode_heSoLuong == 1
+                                && ngaySinh != null
+                                && ngayVaoLam != null
+                                && ngaySinh.compareTo(LocalDate.now()) < 0
+                                && !diaChi.isEmpty() &&
+                                !diaChi.isBlank()) {
+                    // Thực hiện xử lý thêm dữ liệu nhân viên vào database
+                    NguoiDung nd = new NhanVien();
+                    nd.setId(tfSoDienThoai.getText());
+                    nd.setMatKhau(pfMatKhau.getText());
+                    nd.setHo(tfHoVaTen.getText().substring(0, tfHoVaTen.getText().lastIndexOf(" ")));
+                    nd.setTen(tfHoVaTen.getText().substring(tfHoVaTen.getText().lastIndexOf(" ")));
+                    nd.setDiaChi(tfDiaChi.getText());
+                    nd.setVaiTro(false);
+                    // Thực hiện thêm dữ liệu vào bảng nguoidung
+                    if (nd_S.setNguoiDungMoi(nd, dpNgaySinh.getValue().toString())) {
 
-                    // Thực hiện thêm dữ liệu vào bảng nhanvien
-                    if (nv_S.setNhanVienMoi(nv, dpNgayVaoLam.getValue().toString())) {
-                        Utility.showAlertDialog("Thông báo",
-                                "Đăng ký nhân viên mới thành công!", Alert.AlertType.INFORMATION);
-                        App.setRoot("manage-list-of-employee-page");
+                        NhanVien nv = new NhanVien();
+                        nv.setMaNhanVien(nd.getId());
+                        nv.setHeSoLuong(Float.parseFloat(tfHeSoLuong.getText()));
+                        nv.setLuongCoBan(Integer.parseInt(tfLuongCoBan.getText()));
+
+                        // Thực hiện thêm dữ liệu vào bảng nhanvien
+                        if (nv_S.setNhanVienMoi(nv, dpNgayVaoLam.getValue().toString())) {
+                            Utility.showAlertDialog("Thông báo",
+                                    "Đăng ký nhân viên mới thành công!", Alert.AlertType.INFORMATION);
+                            App.setRoot("manage-list-of-employee-page");
+                        } else {
+                            Utility.showAlertDialog("Thông báo",
+                                    "Đăng ký nhân viên mới thất bại!", Alert.AlertType.ERROR);
+                        }
                     } else {
                         Utility.showAlertDialog("Thông báo",
                                 "Đăng ký nhân viên mới thất bại!", Alert.AlertType.ERROR);
                     }
                 } else {
-                    Utility.showAlertDialog("Thông báo",
-                            "Đăng ký nhân viên mới thất bại!", Alert.AlertType.ERROR);
+                    // Thực hiện xử lý hiển thị thông báo lỗi
+                    String alertInfo = getLoiNhapThongTin(tfHoVaTen.getText(),
+                            dpNgaySinh.getValue(), tfDiaChi.getText(),
+                            dpNgayVaoLam.getValue(), tfHeSoLuong.getText(), tfLuongCoBan.getText());
+                    lbAlert.setText(alertInfo);
                 }
-            } else {
-                // Thực hiện xử lý hiển thị thông báo lỗi
-                String alertInfo = getLoiNhapThongTin(tfHoVaTen.getText(),
-                        dpNgaySinh.getValue(), tfDiaChi.getText(),
-                        dpNgayVaoLam.getValue(), tfHeSoLuong.getText(), tfLuongCoBan.getText());
-                lbAlert.setText(alertInfo);
             }
         }
 
@@ -177,8 +182,6 @@ public class RegisterNewEmployeePageController implements Initializable {
         } else {
             if (errorCode_soDienThoai == -1 || errorCode_soDienThoai == -2 || errorCode_soDienThoai == -3) {
                 alertInfo += "Số điện thoại không hợp lệ!\n";
-            } else if (nv_S.kiemTraNhanVienTonTai(soDienThoai)) {
-                alertInfo += "Số điện thoại đã tồn tại!\n";
             } else {
                 if (!matKhau.equals(nhapLaiMatKhau)) {
                     alertInfo += "Mật khẩu không trùng khớp!\n";
