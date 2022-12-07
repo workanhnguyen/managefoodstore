@@ -125,6 +125,7 @@ public class RegisterNewEmployeePageController implements Initializable {
         tfDiaChi.setText("");
         tfHeSoLuong.setText("");
         tfLuongCoBan.setText("");
+        lbAlert.setText("");
     }
     @FXML
     private void switchToManageListOfEmployeePage() throws IOException {

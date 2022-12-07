@@ -9,11 +9,11 @@ Số điện thoại, Họ, Tên, Kết quả
 "339545", Nguyễn Vân, Anh, -2
 "abc3954574", Nguyễn Vân, Anh, -1
 "@ab3954574", Nguyễn Vân, Anh, -1
-" 039545743", Nguyễn Vân, Anh, -1
-"039545743 ", Nguyễn Vân, Anh, -1
+" 039545743", Nguyễn Vân, Anh, -3
+"039545743 ", Nguyễn Vân, Anh, -3
 "0395457*43", Nguyễn Vân, Anh, -1
 "0395457a43", Nguyễn Vân, Anh, -1
-" ", Nguyễn Vân, Anh, -1
+" ", Nguyễn Vân, Anh, 0
 "", Nguyễn Vân, Anh, 0
 "0395457434", "", Anh, 0
 "0395457434", Nguyễn Vân, "", 0
